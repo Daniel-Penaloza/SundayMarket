@@ -1,0 +1,83 @@
+----- USER POLICIES TODOS -----
+1.- Only the owner(or administrator) of the profile can edit his own profile.
+2.- Only the owner of a product can delete.
+----- USER POLICIES TODOS -----
+
+----- USER TODOS -----
+X Index view - RSPEC
+X Show view - RSPEC
+X Edit View - RSPEC
+----- USER TODOS -----
+
+----- ROUTES TODOS -----
+X Change users link to sellers.
+X Change users/sign_in to login_path.
+X Change users/sign_out to login_path destroy method.
+X Change users/register to register_path.
+----- ROUTES TODOS -----
+
+----- MODEL TODOS -----
+X Creation of model user.
+X Creation of model category.
+X Creation of model products.
+4.- Dependent destroy for user model.
+5.- Dependent destroy for category model.
+----- MODEL TODOS -----
+
+----- CONTROLLER TODOS -----
+X Prevent a not signed in user to edit a user.
+2.- Prevent a not signed in user to edit a category.
+3.- Prevent a not signed in user to edit a product.
+4.- Prevent a not signed in user to delete a category.
+4.- Prevent a not signed in user to delete a product.
+----- CONTROLLER TODOS -----
+
+----- ADMINISTRATION TODOS -----
+X Block non admin and guest users.
+2.- Add products count in administrate.
+3.- Add categories present in administrate.
+4.- Add a searchable by products.
+5.- Add a searchable by categories.
+6.- Implement displaying of image in administrate (Users, Products, Categories).
+----- ADMINISTRATION TODOS -----
+
+----- GUI TODOS -----
+X Update the navigation bar.
+X Add AdminDashboard link if the user is an admin.
+3.- Customize the devise registration process.
+X Fix the main text for the header image (relative, absolute, fixed).
+5.- Creation of a footer.
+----- GUI TODOS -----
+
+----- VIEWS TODOS -----
+1.- Installation of kaminari only 6 users by page.
+2.- Integration of flash messages.
+3.- Image show user same heigth that the information.
+----- VIEWS TODOS -----
+
+----- GEM TODOS -----
+1.- Installation of pundit gem.
+2.- Installation of friendlyid (X-username, categories, products).
+----- GEM TODOS -----
+
+----- RSPEC TODOS -----
+1.- Creation of a user.
+2.- Edit a user if admin.
+3.- Edit a user if current_user.
+4.- Delete a user.
+5.- Change the click_on links content.
+----- RSPEC TODOS -----
+
+----- POLICIES TODOS -----
+----- POLICIES TODOS -----
+
+----- OTHER TODOS -----
+1.- Integration of AWS for user image.
+2.- Integration of AWS for product image.
+3.- Integration of AWS for category image.
+----- OTHER TODOS -----
+
+
+----- TODOS IN THE FUTURE -----
+1.- 
+----- TODOS IN THE FUTURE -----

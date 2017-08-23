@@ -1,0 +1,56 @@
+<section class = "edit_seller_section">
+	<div class="row">
+		<div class="col span-2-of-3">
+			<h1>Edit <%= "#{@user.full_name}" %> </h1>
+			<%= form_for @user do |user| %>
+				<div class="user-form-container">
+					<div class="row">
+						<div class="col span-1-of-3">
+							<% if @user.image %>
+								<%= user.label :image, "Current Image", id: "label-image" %> <br/>
+								<%= image_tag(@user.image, size: "180x200", id: "image_edit_seller") %>
+							<% else %>
+								<%= image_tag("user_image.png", size: "100x100", id: "image_edit_seller")%>
+							<% end %>					
+							<div class="image-upload">
+								<label for="file-input">
+									<span class="btn-file">Select File</span>
+								</label>
+								<%= user.file_field :image, id: "file-input"%>
+							</div>
+						</div>
+
+						<div class="col span-2-of-3">
+							<div class="form-group">
+								<%= user.label :first_name, "First Name", class: "input-label" %>
+								<%= user.text_field :first_name, class: "input-field" %>
+							</div>
+							
+							<div class="form-group">
+								<%= user.label :last_name, "Last Name", class: "input-label" %>
+								<%= user.text_field :last_name, class: "input-field" %>	
+							</div>
+							
+							<div class="form-group">
+								<%= user.label :email, "Email", class: "input-label" %>
+								<%= user.email_field :email, class: "input-field" %>	
+							</div>
+							
+							<div class="form-group">
+								<%= user.label :phone, "Phone", class: "input-label" %>
+								<%= user.phone_field :phone, class: "input-field" %>		
+							</div>
+						</div>
+					</div>
+					
+					<div class="row">
+						<div class="col span-3-of-3">
+							<%= user.submit "Update User", class: "btn-submit" %>
+						</div>
+					</div>
+
+				</div>
+			<% end %>
+		</div>
+	</div>
+</section>

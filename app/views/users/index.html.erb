@@ -1,0 +1,30 @@
+<section class="index-users">
+	<% @users.each do |user| %>
+		<div class="row">
+			<div class="col span-1-of-3">
+				<div class="user-info-index">
+					<%= image_tag(user.image, size: "100x200", class: "user-image-index")%>
+					<br>
+					<span class="full-name-user-index"><%= link_to user.full_name, seller_path(user) %></span>
+					<br />
+					<span class="type-of-user">
+						<% if user.type %>
+							<%= user.type %>
+						<% else %>
+							Seller
+						<% end %>	
+					</span>
+					<br />
+					<span class="user-index-description">
+						This user has <%= user.products.count %> products & he is present in <%= user.categories.count %> categories.
+					</span>
+					<br />
+					<div class="actions-index">
+						<%= link_to "Products", "", class: "btn-actions" %>
+						<%= link_to "Categories", "", class: "btn-actions" %>
+					</div>
+				</div>
+			</div>
+		</div>
+	<% end %>
+</section>

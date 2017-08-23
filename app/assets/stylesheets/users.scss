@@ -1,0 +1,233 @@
+/* --------------------------------------------------------*/
+/* INDEX VIEW FOR USERS */
+/* --------------------------------------------------------*/ 
+.index-users {
+  float: left;
+  margin-top: 50px;
+  width: 100%;
+}
+
+.user-info-index {
+  float: left;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 70%;
+  margin-left: 18%;
+  margin-bottom: 10%;
+  overflow: hidden;
+  text-align: center;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  &:hover {
+    box-shadow: 0 14px 18px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  }
+}
+
+.user-image-index { 
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+}
+
+.full-name-user-index a {
+  font-size: 120%;
+  font-weight: 900;
+  color: #4d4d4d;
+  text-decoration: none;
+  &:hover{
+    color: #000;
+    transition: color 0.3s;
+  }
+}
+
+.users-index .type-of-user {
+  font-size: 90%;
+  font-weight: 100;
+}
+
+.user-index-description {
+  padding: 5px 5px;
+  font-weight: 500;
+  font-size: 80%;
+}
+
+.actions-index {
+  margin-top: 20px;
+  margin-bottom: 20px; 
+  padding-left: 5px;
+}
+
+.user-actions {
+  float: right;
+  margin-top: -10px;
+}
+
+/* --------------------------------------------------------*/
+/* INDEX VIEW FOR USERS */
+/* --------------------------------------------------------*/  
+
+/* --------------------------------------------------------*/
+/* SHOW VIEW FOR USERS */
+/* --------------------------------------------------------*/  
+
+.image-container {
+  float: left;
+}
+
+.image-container img {
+  border-radius: 50%;
+  border: 1px solid black;
+}
+
+.user-information {
+  margin-left: -30px;
+  color: black;
+  line-height: 30px;
+}
+
+.hi-box {
+  width: 8%;
+  text-align: left;
+  font-size: 220%;
+  margin-bottom: 10px;
+  color: #000;
+  font-weight: 500;
+}
+
+.im-user {
+  font-size: 120%;  
+  color: black;
+}
+
+.full-name-user {
+  font-size: 150%;
+  font-weight: 800;
+  color: #4d4d4d;
+}
+
+.type-of-user {
+  font-weight: 600;
+  color: #4d4d4d;
+}
+
+.user-actions-show {
+  float: right;
+  margin-top: -10px;
+}
+
+.show-user hr {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  opacity: 0.3;
+}
+
+.email-of-user {
+  color: #4d4d4d;
+  font-weight: 500;
+}
+
+.products-of-user,
+.phone-of-user {
+  color: #4d4d4d;
+  font-weight: 500;
+}
+
+.products-user {
+  margin-top: 25px;
+}
+
+.edit-user-button {
+  margin-top: 10px;
+  float: left;
+  margin-left: 90px;
+}
+/* --------------------------------------------------------*/
+/* SHOW VIEW FOR USERS */
+/* --------------------------------------------------------*/  
+
+
+/* --------------------------------------------------------*/
+/* EDIT VIEW FOR USERS */
+/* --------------------------------------------------------*/
+
+.edit_seller_section {
+  margin-top: -50px;
+  margin-left: 25%;
+}
+
+.edit_seller_section h1 {
+  text-align: center;
+}
+
+.user-form-container {
+  border: 1px solid #c3c3c3;
+  padding: 25px 25px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  height: 400px;
+  &:hover {
+    box-shadow: 0 14px 18px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  }
+}
+
+#label-image {
+  width: 100%;
+  padding: 5px 5px;
+  margin-left: 30px;
+  font-weight: 500;
+}
+
+
+#image_edit_seller {
+  border: 1px solid #c3c3c3;
+  border-radius: 5px;
+  margin-left: 8px;
+  margin-top: 5px;
+}
+
+.image-upload > input {
+  display: none;
+}
+
+.btn-file {
+  background-color: #d4d4d4;
+  padding: 6px 6px;
+  float: left;
+  border: 1px solid #c3c3c3;
+  border-radius: 5px;
+  margin-left: 8px;
+  width: 90%;
+  text-align: center;
+  &:hover {
+    background-color: #eee;
+    transition: background-color 1s;
+  }
+}
+
+.user-form-container .row .col:last-child {
+  float: left;
+}
+
+.form-group {
+  padding: 5px 5px;
+}
+
+.input-label {
+  font-size: 100%;
+  font-weight: 700;
+}
+
+.input-field {
+  border: 2px solid #4CD762;
+  border-radius: 5px;
+  padding: 5px 5px;
+  width: 100%;
+}
+
+.input-file {
+  border: 0px;
+  border-radius: 0px;
+}
+/* --------------------------------------------------------*/
+/* EDIT VIEW FOR USERS */
+/* --------------------------------------------------------*/  

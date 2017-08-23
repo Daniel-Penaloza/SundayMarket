@@ -1,0 +1,29 @@
+<nav>   
+  <ul>         
+    <li><%= link_to "Brand Name", root_path %></li>
+    <li><%= link_to "Sellers", sellers_path %></li>
+    <li><%= link_to "Products", products_path %></li>
+    <li><%= link_to "Categories", categories_path %></li>
+    <% if signed_in? %>
+      <li class="user-actions">
+        <%= link_to "#{current_user.full_name}<span class='caret'></span>".html_safe, 
+                    seller_path(current_user), class:  "current-user-actions"%> 
+        <div>
+          <ul>          
+            <li><%= link_to "Products", "" %></li>
+            <li><%= link_to "Categories", "" %></li>
+            <li><%= link_to "New product", "" %></li>
+            <li><%= link_to "New category", "" %></li>
+            <% if User.admin_types.include?(current_user.try(:type)) %>
+              <li><%= link_to "Admin Dashboard", admin_root_path %></li>
+            <% end %>
+            <li class="separator"><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+          </ul>
+        </div>
+      </li>
+      <% else %>
+      <li class="login-actions"><%= link_to "Login", new_user_session_path %></li>
+      <li class="login-actions"><%= link_to "Register", new_user_registration_path %></li>
+    <% end %>
+  </ul>
+</nav>
