@@ -1,3 +1,12 @@
+----- GUI TODOS -----
+X Update the navigation bar.
+X Add AdminDashboard link if the user is an admin.
+X Customize the devise registration process.
+X Fix the main text for the header image (relative, absolute, fixed).
+5.- Creation of a footer.
+----- GUI TODOS -----
+
+
 ----- USER POLICIES TODOS -----
 1.- Only the owner(or administrator) of the profile can edit his own profile.
 2.- Only the owner of a product can delete.
@@ -41,18 +50,11 @@ X Block non admin and guest users.
 6.- Implement displaying of image in administrate (Users, Products, Categories).
 ----- ADMINISTRATION TODOS -----
 
------ GUI TODOS -----
-X Update the navigation bar.
-X Add AdminDashboard link if the user is an admin.
-3.- Customize the devise registration process.
-X Fix the main text for the header image (relative, absolute, fixed).
-5.- Creation of a footer.
------ GUI TODOS -----
-
 ----- VIEWS TODOS -----
 1.- Installation of kaminari only 6 users by page.
 2.- Integration of flash messages.
 3.- Image show user same heigth that the information.
+X Implement a image by default
 ----- VIEWS TODOS -----
 
 ----- GEM TODOS -----
@@ -81,3 +83,7 @@ X Fix the main text for the header image (relative, absolute, fixed).
 ----- TODOS IN THE FUTURE -----
 1.- 
 ----- TODOS IN THE FUTURE -----
+
+
+1.- Creation of GUI for devise.
+2.- Implementation of a image by default.
