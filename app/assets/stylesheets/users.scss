@@ -132,7 +132,8 @@
 }
 
 .products-of-user,
-.phone-of-user {
+.phone-of-user,
+.categories-of-user {
   color: #4d4d4d;
   font-weight: 500;
 }
@@ -146,6 +147,29 @@
   float: left;
   margin-left: 90px;
 }
+
+
+.category-name {
+  font-size: 65%;
+  margin-left: 5px;
+  background-color: #4CD762;
+  padding: 5px 5px;
+  border-radius: 150px;
+  font-weight: bold;
+  border: 1px solid #000;
+}
+
+.category-name a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.5s;
+}
+
+.category-name a:hover {
+  color: red;
+  color: #4d4d4d;
+}
+
 /* --------------------------------------------------------*/
 /* SHOW VIEW FOR USERS */
 /* --------------------------------------------------------*/  
@@ -233,6 +257,7 @@
   border: 0px;
   border-radius: 0px;
 }
+
 /* --------------------------------------------------------*/
 /* EDIT VIEW FOR USERS */
 /* --------------------------------------------------------*/  
