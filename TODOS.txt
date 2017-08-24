@@ -36,6 +36,13 @@ X Dependent destroy for user model.
 X Dependent destroy for category model.
 ----- MODEL TODOS -----
 
+----- VIEWS TODOS -----
+1.- Installation of kaminari only 6 users by page.
+2.- Integration of flash messages.
+X Image show user same heigth that the information.
+X Implement a image by default.
+----- VIEWS TODOS -----
+
 ----- CONTROLLER TODOS -----
 X Prevent a not signed in user to edit a user.
 2.- Prevent a not signed in user to edit a category.
@@ -43,13 +50,6 @@ X Prevent a not signed in user to edit a user.
 4.- Prevent a not signed in user to delete a category.
 4.- Prevent a not signed in user to delete a product.
 ----- CONTROLLER TODOS -----
-
------ VIEWS TODOS -----
-1.- Installation of kaminari only 6 users by page.
-2.- Integration of flash messages.
-X Image show user same heigth that the information.
-X Implement a image by default
------ VIEWS TODOS -----
 
 ----- RSPEC TODOS -----
 X Creation of a user.

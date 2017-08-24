@@ -53,3 +53,6 @@ gem 'friendly_id', '~> 5.2', '>= 5.2.1'
 
 # For Nice Icons
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.2'
+
+# Paginator
+gem 'kaminari', '~> 1.0', '>= 1.0.1'
