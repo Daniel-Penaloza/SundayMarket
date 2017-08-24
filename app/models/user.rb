@@ -3,7 +3,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   
   #-----------------------Associations-------------------#
-  has_many :products
+  has_many :products, dependent: :destroy
   has_many :categories, :through  => :products
 
   #-----------------------Validations-------------------#
