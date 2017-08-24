@@ -439,3 +439,53 @@ header {
 /* --------------------------------------------------------*/
 /* APPLICATION FOOTER */
 /* --------------------------------------------------------*/
+
+/* --------------------------------------------------------*/
+/* PAGINATION */
+/* --------------------------------------------------------*/
+
+.pagination {
+  float: left;
+  margin-left: 13%;
+  font-size: 100%;
+  margin-top: -7%;
+}
+
+.pagination > * {
+    margin-right: 0.1em;
+    padding: 0.3em 0.4em;
+}
+
+.pagination a {
+  text-decoration: none;
+  color: #000;
+  background: #adedb7;
+  border-radius: 5%;
+  font-weight: bold;
+}
+
+.pagination a:hover {
+    background: #4CD762 none repeat scroll 0 0;
+    text-shadow: 1px 1px 1px #171717;
+    color: #fff;
+}
+
+.pagination a:active {
+    text-shadow: none;
+}
+
+.pagination .current {
+    background: #4CD762 none repeat scroll 0 0;
+    color: #fff;
+    border-radius: 5%;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px #171717;
+}
+
+.pagination .disabled {
+    color: #C0C0C0;
+}
+
+/* --------------------------------------------------------*/
+/* PAGINATION */
+/* --------------------------------------------------------*/

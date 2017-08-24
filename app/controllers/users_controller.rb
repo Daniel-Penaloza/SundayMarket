@@ -6,7 +6,7 @@ class UsersController < ApplicationController
 	#controller/concerns/devise_whitelist, once that we have that we need to include the call in the application_controller
 
 	def index
-		@users = User.page(params[:page]).per(6)
+		@users = User.paginate(:page => params[:page], :per_page => 6)
 	end
 
 	def show
