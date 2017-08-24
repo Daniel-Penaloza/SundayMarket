@@ -14,7 +14,7 @@
             <li><%= link_to "New product", "" %></li>
             <li><%= link_to "New category", "" %></li>
             <li>
-              <%= link_to "Edit Profile",seller_path(current_user) if current_user.class.name == "User" %>
+              <%= link_to "Edit Profile", edit_seller_path(current_user) if current_user.class.name == "User" %>
             </li>
             <% if User.admin_types.include?(current_user.try(:type)) %>
               <li><%= link_to "Admin Dashboard", admin_root_path %></li>

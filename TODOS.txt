@@ -37,10 +37,10 @@ X Dependent destroy for category model.
 ----- MODEL TODOS -----
 
 ----- VIEWS TODOS -----
-1.- Installation of kaminari only 6 users by page.
-2.- Integration of flash messages.
+X Installation of kaminari only 6 users by page.
 X Image show user same heigth that the information.
 X Implement a image by default.
+4.- Integration of flash messages.
 ----- VIEWS TODOS -----
 
 ----- CONTROLLER TODOS -----
