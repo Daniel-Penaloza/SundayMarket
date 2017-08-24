@@ -1,4 +1,14 @@
 <center><h1> Explore by Category </h1></center>
+
+<% if @categories.any? %>
+<div class="wellc">
+  <i> There are currently <%= @categories.count %> categories to browse. 
+  <% else %>
+  <i> There are no categories yet.</i>
+  <% end %>
+  </div>
+
+
    <% @categories.each do |cat| %>
     <div class="wellc">
 
