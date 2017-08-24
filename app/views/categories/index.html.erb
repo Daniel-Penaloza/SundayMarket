@@ -1,1 +1,30 @@
-<%= @categories.inspect %>
+<center><h1> Explore by Category </h1></center>
+   <% @categories.each do |cat| %>
+    <div class="wellc">
+
+    <div class="wrapper">
+      <div class="box a"><%= link_to image_tag(cat.cat_image), category_path(cat) %></div>
+      <div class="box b"><h2><%= cat.name.capitalize %> </h2> <br>
+      <%if cat.products.any?%>
+        <b>Sellers who have items in this category:</b> <br> <br>
+        <ul>
+          <% cat.products.each do |prod| %>
+             <li><%= link_to prod.user.first_name, user_path(prod) %></li>
+          <% end %>
+        </ul>
+      <% else %>
+      <p> There are no products in this category yet!</p>
+      <% end %>
+        
+      </div>
+      <div class="box c"><%= link_to "Browse category", category_path(cat), class: "cat-btn-file" %></div>
+      <div class="box d"><p>Products in this category: <%= cat.products.count %></div>
+      <div class="box e">
+      <% if User.admin_types.include?(current_user.try(:type)) %>
+      <%= link_to "Edit Category", edit_category_path(cat), class: "cat-btn-file"  %> / <%= link_to "Delete", category_path(cat), class: "cat-btn-file", method: :delete,
+            data: { confirm: "Are you sure you want to delete this catgory?" }  %></p></div>
+            <% end %>
+    </div>
+  </div> 
+
+     <% end %>
