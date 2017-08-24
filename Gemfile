@@ -50,3 +50,6 @@ gem 'bourbon', '~> 4.3', '>= 4.3.4'
 
 # Permalinks
 gem 'friendly_id', '~> 5.2', '>= 5.2.1'
+
+# For Nice Icons
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.2'

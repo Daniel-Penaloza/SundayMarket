@@ -400,3 +400,41 @@ header {
 /* --------------------------------------------------------*/
 /* DEVISE VIEWS */
 /* --------------------------------------------------------*/
+
+/* --------------------------------------------------------*/
+/* APPLICATION FOOTER */
+/* --------------------------------------------------------*/
+
+  .application-footer {
+    margin-top: 30px;
+    float: left;
+    padding: 15px 15px;
+    background-color: #5d5d5d;
+    width: 100%;
+    color: #fff;
+  }
+
+  .application-footer .col {
+    margin-left: 10px;
+    font-size: 80%;
+    font-weight: 600;
+  }
+  
+  .social-links a {
+    text-decoration: none;
+    color: #fff;
+    margin-left: 5px;
+  }
+  
+  .social-links i {
+    font-size: 80%;
+  }
+
+  .social-links i:hover,
+  .social-links a:hover {
+    color: #4CD762;
+  }
+
+/* --------------------------------------------------------*/
+/* APPLICATION FOOTER */
+/* --------------------------------------------------------*/
