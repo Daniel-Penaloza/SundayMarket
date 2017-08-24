@@ -489,3 +489,72 @@ header {
 /* --------------------------------------------------------*/
 /* PAGINATION */
 /* --------------------------------------------------------*/
+
+
+/* --------------------------------------------------------*/
+/* FLASH MESSAGES */
+/* --------------------------------------------------------*/
+
+
+.alert {
+  width: 83%;
+  text-align: left;
+  margin-left: 10%;
+  padding: 10px 10px;
+  border-radius: 10px;
+  margin-top: 55px;
+}
+
+.alert strong {
+  font-weight: bold;  
+}
+
+.alert-notice
+ {
+  background-color: #0B7DDA;
+  color: white;
+}
+
+.alert-notice a { 
+  text-decoration: none;
+  float: right;
+  color: white; 
+  font-weight: bold;
+  font-size: 200%;
+  text-align: center;
+  margin-top: -1%;
+}
+
+.alert-warning  {
+  background-color: #DA190B;
+  color: white;
+}
+
+.alert-warning a { 
+  text-decoration: none;
+  float: right;
+  color: white; 
+  font-weight: bold;
+  font-size: 200%;
+  text-align: center;
+  margin-top: -1%;
+}
+
+.alert-danger {
+  background-color: #A94442;
+  color: white;
+}
+
+.alert-danger a {
+  text-decoration: none;
+  float: right;
+  color: white; 
+  font-weight: bold;
+  font-size: 200%;
+  text-align: center;
+  margin-top: -1%;
+}
+
+/* --------------------------------------------------------*/
+/* FLASH MESSAGES */
+/* --------------------------------------------------------*/

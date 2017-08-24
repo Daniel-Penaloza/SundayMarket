@@ -26,6 +26,7 @@ X Add AdminDashboard link if the user is an admin.
 X Customize the devise registration process.
 X Fix the main text for the header image (relative, absolute, fixed).
 X Creation of a footer.
+1.- Fix the footer in the show user view.
 ----- GUI TODOS -----
 
 	----- MODEL TODOS -----
@@ -83,3 +84,7 @@ X Creation of a user.
 ----- TODOS IN THE FUTURE -----
 1.- 
 ----- TODOS IN THE FUTURE -----
+
+
+:per_page for administrate
+:per_pate for will paginate
