@@ -1,8 +1,12 @@
 class UsersController < ApplicationController
-	before_action :set_user, only: [:show, :edit, :update, :products]
-	
+	before_action :set_user, only: [:show, :edit, :update ]
+
+	#The new action is provided by devise, the only thing that we need to permit the first_name and last_name is
+	#the creation of a concern file to allow us to use the attributes, the file is under 
+	#controller/concerns/devise_whitelist, once that we have that we need to include the call in the application_controller
+
 	def index
-		@users = User.all
+		@users = User.paginate(:page => params[:page], :per_page => 6)
 	end
 
 	def show
@@ -23,11 +27,6 @@ class UsersController < ApplicationController
 			end
 		end
 	end
-
-	def products
-		@products = Product.where(user_id = @user.id)
-	end
-
 
 	private
 		def user_params

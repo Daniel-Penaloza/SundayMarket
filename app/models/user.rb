@@ -3,7 +3,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   
   #-----------------------Associations-------------------#
-  has_many :products
+  has_many :products, dependent: :destroy
   has_many :categories, :through  => :products
 
   #-----------------------Validations-------------------#
@@ -21,4 +21,12 @@ class User < ApplicationRecord
   def full_name
     ("#{first_name} #{last_name}").titleize
   end
+
+  #-----------------------Adding A Default Image To The User -------------------#
+  before_create :asign_image
+
+  private
+    def asign_image
+      self.image = File.open(File.join(Rails.root,'app/assets/images/user_image.png'))
+    end
 end

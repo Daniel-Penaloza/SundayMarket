@@ -6,14 +6,16 @@
     <li><%= link_to "Categories", categories_path %></li>
     <% if signed_in? %>
       <li class="user-actions">
-        <%= link_to "#{current_user.full_name}<span class='caret'></span>".html_safe, 
-                    seller_path(current_user), class:  "current-user-actions"%> 
+        <%= link_to "#{current_user.full_name}<span class='caret'></span>".html_safe %> 
         <div>
           <ul>          
             <li><%= link_to "Products", "" %></li>
             <li><%= link_to "Categories", "" %></li>
             <li><%= link_to "New product", "" %></li>
             <li><%= link_to "New category", "" %></li>
+            <li>
+              <%= link_to "Edit Profile", edit_seller_path(current_user) if current_user.class.name == "User" %>
+            </li>
             <% if User.admin_types.include?(current_user.try(:type)) %>
               <li><%= link_to "Admin Dashboard", admin_root_path %></li>
             <% end %>

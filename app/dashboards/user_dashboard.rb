@@ -9,6 +9,7 @@ class UserDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     id: Field::Number.with_options(searchable: false),
+    slug: Field::String.with_options(searchable: false),
     email: Field::String.with_options(searchable: true),
     password: Field::String.with_options(searchable: false),
     password_confirmation: Field::String.with_options(searchable: false),
