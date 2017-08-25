@@ -45,10 +45,16 @@ Product.create!(name: "Iphone 6", price: 350.99, summary: "An expensive phone",
 				category_id: Category.second.id, user_id: @user.id,
 				image: @product_image)
 
+20.times do |product|
+	Product.create!(name: "Cel #{product}", price: "380.50", summary: "This is a test phone",
+					description: ["description number 1", "description number 2", "description number 3"],
+					category_id: Category.second.id, user_id: @user.id, image: @product_image)
+end
+
 
 Product.create!(name: "Television", price: 450.50, summary: "A nice tv",
 				description: ["52 inches", "LCD - 3D included", "1 month of warranty"],
 				category_id: Category.third.id, user_id: @admin_user.id,
 				image: @product_image)
 
-puts "3 products have been created"
+puts "23 products have been created"

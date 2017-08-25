@@ -17,7 +17,7 @@ class UsersController < ApplicationController
 	end
 	
 	def update
-		authorize @post
+		#authorize @user
 		if @user.update(user_params)
 			flash[:notice] = "The user #{@user.full_name} was updated successfully."
 			redirect_to seller_path(@user)
@@ -25,6 +25,11 @@ class UsersController < ApplicationController
 			flash[:warning] = "There was a problem trying to update the user."
 			render :edit
 		end
+	end
+
+	def products
+		@user = User.friendly.find(params[:id])
+		@user_products = User.friendly.find(params[:id]).products.paginate(:page => params[:page], :per_page => 6)
 	end
 
 	private

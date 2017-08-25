@@ -261,3 +261,113 @@
 /* --------------------------------------------------------*/
 /* EDIT VIEW FOR USERS */
 /* --------------------------------------------------------*/  
+
+
+/* --------------------------------------------------------*/
+/* USERS PRODUCT VIEW FOR USERS */
+/* --------------------------------------------------------*/  
+.section-user-products {
+  margin-top: -30px;
+}
+
+.user-products-information {
+  text-align: center;
+}
+
+.user-products-information img {
+  border-radius: 50%;
+}
+
+.user-products-information  a {
+  text-decoration: none;
+  color: #4CD762;
+}
+
+.user-products-information a:hover {
+  color: #000;
+  transition: color 0.5s;
+}
+
+.user-products-information h1 {
+  margin-top: -5px;
+}
+
+.user-products-information h4 {
+  margin-top: -20px;
+  font-size: 80%;
+}
+
+.section-user-products hr {
+  width: 50%;
+  margin-left: 25%;
+  opacity: 0.2;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.user-product-information {
+  border: 1px solid red;
+  padding: 25px 25px;
+  border-radius: 5%;  
+  margin-right: 5%;
+  font-weight: bold;
+}
+
+.user-product-information img {
+  text-align: center;
+  margin-left: 25%;
+}
+
+.user-product-information hr {
+  width: 100%;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+
+.section-product {
+  margin-top: -180px;
+}
+
+.product-information {
+  float: left;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 70%;
+  margin-left: 18%;
+  margin-bottom: 10%;
+  overflow: hidden;
+  text-align: center;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  &:hover {
+    box-shadow: 0 14px 18px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  }
+}
+
+.product-information img {
+  border-bottom: 1px solid #bbb;
+}
+
+.product-name a {
+  color: #4CD762;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 120%;
+  &:hover {
+    color: #000;
+    transition: color 0.5s;
+  }
+}
+
+.product-summary {
+  font-size: 80%;
+}
+
+.product-price {
+  font-weight: 600;
+}
+/* --------------------------------------------------------*/
+/* USERS PRODUCT VIEW FOR USERS */
+/* --------------------------------------------------------*/  

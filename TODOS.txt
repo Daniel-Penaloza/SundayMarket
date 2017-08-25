@@ -18,6 +18,9 @@ X Change users link to sellers.
 X Change users/sign_in to login_path.
 X Change users/sign_out to login_path destroy method.
 X Change users/register to register_path.
+
+5.- Creation of a path for seller-name/products
+6.- Creation of a path for seller-name/categories
 ----- ROUTES TODOS -----
 
 	----- MODEL TODOS -----
@@ -36,6 +39,8 @@ X Integration of flash messages.
 ----- VIEWS TODOS -----
 
 ----- GUI TODOS -----
+User View
+
 X Update the navigation bar.
 X Add AdminDashboard link if the user is an admin.
 X Customize the devise registration process.
@@ -43,6 +48,7 @@ X Fix the main text for the header image (relative, absolute, fixed).
 X Creation of a footer.
 X Add label for categories present in a user show view.
 X Fix the footer in the show user view.
+8.- Categories View
 ----- GUI TODOS -----
 
 ----- RSPEC TODOS -----
@@ -62,12 +68,12 @@ X Prevent a not signed in user to edit a different user unless is an admin. (Pun
 
 
 ----- GEM TODOS -----
-1.- Installation of pundit gem.
+X Installation of pundit gem.
 2.- Installation of friendlyid (Xusername, categories, products).
 ----- GEM TODOS -----
 
 ----- USER POLICIES TODOS -----
-1.- Only the owner(or administrator) of the profile can edit his own profile.
+X Only the owner(or administrator) of the profile can edit his own profile.
 2.- Only the owner of a product can delete.
 ----- USER POLICIES TODOS -----
 
@@ -79,8 +85,6 @@ X Prevent a not signed in user to edit a different user unless is an admin. (Pun
 ----- OTHER TODOS -----
 
 ----- NEW ADITIONS -----
-
-
 
 
 ----- NEW ADITIONS -----
