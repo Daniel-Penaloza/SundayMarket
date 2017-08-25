@@ -1,6 +1,6 @@
 class Product < ApplicationRecord
-	belongs_to :user, dependent: :destroy
-	belongs_to :category, dependent: :destroy
+	belongs_to :user
+	belongs_to :category
 
 	serialize :description, Array
 	# user & category ID are both required through the belongs_to association
