@@ -13,17 +13,7 @@ X Show view - RSPEC
 X Edit View - RSPEC
 ----- USER TODOS -----
 
------ ROUTES TODOS -----
-X Change users link to sellers.
-X Change users/sign_in to login_path.
-X Change users/sign_out to login_path destroy method.
-X Change users/register to register_path.
-
-5.- Creation of a path for seller-name/products
-6.- Creation of a path for seller-name/categories
------ ROUTES TODOS -----
-
-	----- MODEL TODOS -----
+----- MODEL TODOS -----
 X Creation of model user.
 X Creation of model category.
 X Creation of model products.
@@ -37,6 +27,15 @@ X Image show user same heigth that the information.
 X Implement a image by default.
 X Integration of flash messages.
 ----- VIEWS TODOS -----
+
+----- ROUTES TODOS -----
+X Change users link to sellers.
+X Change users/sign_in to login_path.
+X Change users/sign_out to login_path destroy method.
+X Change users/register to register_path.
+X Creation of a path for seller-name/products
+6.- Creation of a path for seller-name/categories
+----- ROUTES TODOS -----
 
 ----- GUI TODOS -----
 User View

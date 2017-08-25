@@ -22,6 +22,11 @@ class User < ApplicationRecord
     ("#{first_name} #{last_name}").titleize
   end
 
+  #-----------Avoiding The Repeated Elements In The User Categories------------#
+  def category_no_repeated
+      self.categories.distinct.pluck(:id, :name)
+  end
+
   #-----------------------Adding A Default Image To The User -------------------#
   before_create :asign_image
 
