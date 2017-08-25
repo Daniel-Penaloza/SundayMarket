@@ -13,19 +13,23 @@ class UsersController < ApplicationController
 	end
 
 	def edit
+		authorize @user
 	end
 	
 	def update
-		#If the current_user signed in is the owner or if the current_user is type AdminUser then proceed to update
-		if current_user.id == @user.id || User.admin_types.include?(current_user.try(:type))
-			if @user.update(user_params)
-				flash[:notice] = "The user #{@user.full_name} was updated successfully."
-				redirect_to seller_path(@user)
-			else
-				flash[:warning] = "There was a problem trying to update the user."
-				render :edit
-			end
+		#authorize @user
+		if @user.update(user_params)
+			flash[:notice] = "The user #{@user.full_name} was updated successfully."
+			redirect_to seller_path(@user)
+		else
+			flash[:warning] = "There was a problem trying to update the user."
+			render :edit
 		end
+	end
+
+	def products
+		@user = User.friendly.find(params[:id])
+		@user_products = User.friendly.find(params[:id]).products.paginate(:page => params[:page], :per_page => 6)
 	end
 
 	private

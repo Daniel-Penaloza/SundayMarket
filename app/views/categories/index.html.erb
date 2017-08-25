@@ -19,7 +19,7 @@
         <b>Sellers who have items in this category:</b> <br> <br>
         <ul>
           <% cat.products.each do |prod| %>
-             <li><%= link_to prod.user.first_name, user_path(prod) %></li>
+             <li><%= link_to prod.user.first_name, seller_path(prod) %></li>
           <% end %>
         </ul>
       <% else %>

@@ -18,16 +18,10 @@ X Change users link to sellers.
 X Change users/sign_in to login_path.
 X Change users/sign_out to login_path destroy method.
 X Change users/register to register_path.
------ ROUTES TODOS -----
 
------ GUI TODOS -----
-X Update the navigation bar.
-X Add AdminDashboard link if the user is an admin.
-X Customize the devise registration process.
-X Fix the main text for the header image (relative, absolute, fixed).
-X Creation of a footer.
-1.- Fix the footer in the show user view.
------ GUI TODOS -----
+5.- Creation of a path for seller-name/products
+6.- Creation of a path for seller-name/categories
+----- ROUTES TODOS -----
 
 	----- MODEL TODOS -----
 X Creation of model user.
@@ -41,38 +35,48 @@ X Dependent destroy for category model.
 X Installation of kaminari only 6 users by page.
 X Image show user same heigth that the information.
 X Implement a image by default.
-4.- Integration of flash messages.
+X Integration of flash messages.
 ----- VIEWS TODOS -----
 
+----- GUI TODOS -----
+User View
+
+X Update the navigation bar.
+X Add AdminDashboard link if the user is an admin.
+X Customize the devise registration process.
+X Fix the main text for the header image (relative, absolute, fixed).
+X Creation of a footer.
+X Add label for categories present in a user show view.
+X Fix the footer in the show user view.
+8.- Categories View
+----- GUI TODOS -----
+
+----- RSPEC TODOS -----
+X Creation of a user.
+X Edit a user if admin.
+X Edit a user if current_user.
+X Delete a user.
+----- RSPEC TODOS -----
+
 ----- CONTROLLER TODOS -----
-X Prevent a not signed in user to edit a user.
+X Prevent a not signed in user to edit a different user unless is an admin. (Pundit)
 2.- Prevent a not signed in user to edit a category.
 3.- Prevent a not signed in user to edit a product.
 4.- Prevent a not signed in user to delete a category.
 4.- Prevent a not signed in user to delete a product.
 ----- CONTROLLER TODOS -----
 
------ RSPEC TODOS -----
-X Creation of a user.
-2.- Edit a user if admin.
-3.- Edit a user if current_user.
-4.- Delete a user.
-5.- Change the click_on links content.
------ RSPEC TODOS -----
+
+----- GEM TODOS -----
+X Installation of pundit gem.
+2.- Installation of friendlyid (Xusername, categories, products).
+----- GEM TODOS -----
 
 ----- USER POLICIES TODOS -----
-1.- Only the owner(or administrator) of the profile can edit his own profile.
+X Only the owner(or administrator) of the profile can edit his own profile.
 2.- Only the owner of a product can delete.
-	----- USER POLICIES TODOS -----
+----- USER POLICIES TODOS -----
 
-
------ GEM TODOS -----
-1.- Installation of pundit gem.
-2.- Installation of friendlyid (X-username, categories, products).
------ GEM TODOS -----
-
------ POLICIES TODOS -----
------ POLICIES TODOS -----
 
 ----- OTHER TODOS -----
 1.- Integration of AWS for user image.
@@ -80,11 +84,7 @@ X Creation of a user.
 3.- Integration of AWS for category image.
 ----- OTHER TODOS -----
 
-
------ TODOS IN THE FUTURE -----
-1.- 
------ TODOS IN THE FUTURE -----
+----- NEW ADITIONS -----
 
 
-:per_page for administrate
-:per_pate for will paginate
+----- NEW ADITIONS -----

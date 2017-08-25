@@ -56,3 +56,6 @@ gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.2'
 
 # Paginator
 gem 'will_paginate', '~> 3.1', '>= 3.1.6'
+
+# Policies for the actions
+gem 'pundit', '~> 1.1'

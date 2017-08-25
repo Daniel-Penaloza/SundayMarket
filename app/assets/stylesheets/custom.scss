@@ -404,37 +404,73 @@ header {
 /* --------------------------------------------------------*/
 /* APPLICATION FOOTER */
 /* --------------------------------------------------------*/
+footer {
+  background-color: #333;
+  padding: 40px;
+  font-size:80%;
+  float: left;
+  width: 100%;
+  margin-top: 100px;
+}
 
-  .application-footer {
-    margin-top: 93px;
-    float: left;
-    padding: 15px 15px;
-    background-color: #5d5d5d;
-    width: 100%;
-    color: #fff;
-    position: relative;
-  }
+.footer-nav {
+  list-style: none;
+  float:left;
+}
 
-  .application-footer .col {
-    margin-left: 10px;
-    font-size: 80%;
-    font-weight: 600;
-  }
-  
-  .social-links a {
-    text-decoration: none;
-    color: #fff;
-    margin-left: 5px;
-  }
-  
-  .social-links i {
-    font-size: 80%;
-  }
+.social-links {
+  list-style: none;
+  float: right;
+}
 
-  .social-links i:hover,
-  .social-links a:hover {
-    color: #4CD762;
-  }
+.footer-nav li,
+.social-links li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.footer-nav li:last-child,
+.social-links li:last-child {
+  margin: 0;
+} 
+
+.footer-nav li a:link,
+.footer-nav li a:visited,
+.social-links li a:link,
+.social-links li a:visited {
+  text-decoration: none;
+  border: 0;
+  color: #888;
+  -webkit-transition: color 0.2s;
+  transition: color 0.2s;
+}
+
+.footer-nav li a:hover,
+.footer-nav li a:active {
+  color: #ddd;
+}
+
+.social-links li a:link,
+.social-links li a:visited {
+  font-size: 100%;
+  margin-left: 5px;
+}
+
+.social-links li a:hover,
+.social-links li a:active {
+  color: white;
+}
+
+.social-links i {
+  color: #4CD762;
+}
+
+footer p {
+  color: #888;
+  text-align: center;
+  margin-top: 20px;
+}
+
 
 /* --------------------------------------------------------*/
 /* APPLICATION FOOTER */
@@ -555,6 +591,20 @@ header {
   margin-top: -1%;
 }
 
+.alert-alert {
+  background-color: #E59700;
+  color: white;
+}
+
+.alert-alert a {
+  text-decoration: none;
+  float: right;
+  color: white; 
+  font-weight: bold;
+  font-size: 200%;
+  text-align: center;
+  margin-top: -1%;
+}
 /* --------------------------------------------------------*/
 /* FLASH MESSAGES */
 /* --------------------------------------------------------*/
