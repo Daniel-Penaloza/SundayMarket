@@ -1,10 +1,16 @@
 class Category < ApplicationRecord
+	
+	#-----------------------Associations-------------------#
 	has_many :products, dependent: :destroy
 	has_many :users, :through  => :products
 	
-	#add validations, uniqueness, ? think about what else
-	
-  mount_uploader :cat_image, CategoryImageUploader
+	#-----------------------Validations-------------------#
     validates_presence_of :name
+	
+	#----------------------- Uploader -----------------------#
+  	mount_uploader :cat_image, CategoryImageUploader
 
+  	#-----------------------Permalink-----------------------#
+    extend FriendlyId
+	friendly_id :name, use: :slugged
 end

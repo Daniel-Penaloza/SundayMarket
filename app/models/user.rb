@@ -8,8 +8,11 @@ class User < ApplicationRecord
 
   #-----------------------Validations-------------------#
   validates_presence_of :first_name, :last_name
+  
+  #----------------------- Uploader -----------------------#
   mount_uploader :image, UserImageUploader
 
+  #----------------------- User Admin Types -----------------------# 
   def self.admin_types
   	["AdminUser"]
   end
