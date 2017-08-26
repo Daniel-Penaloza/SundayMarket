@@ -74,7 +74,7 @@ X Prevent a not signed in user to edit a different user unless is an admin. (Pun
 
 ----- GEM TODOS -----
 X Installation of pundit gem.
-2.- Installation of friendlyid (Xusername, categories, products).
+2.- Installation of friendlyid (Xusername, Xcategories, products).
 ----- GEM TODOS -----
 
 ----- USER POLICIES TODOS -----

@@ -6,6 +6,8 @@ class CategoriesController < ApplicationController
     @categories = Category.paginate(:page => params[:page], :per_page => 6)
   end
 
+  def show
+  end
 
   def new
     @category = Category.new
@@ -31,10 +33,6 @@ class CategoriesController < ApplicationController
       render 'edit'
     end
   end
-
-  def show
-    #@category_products = @category.products
-  end
   
   def destroy
     @category.destroy
@@ -44,7 +42,7 @@ class CategoriesController < ApplicationController
 
   private
     def set_category
-      @category = Category.friendly.find(params[:id])  
+      @category = Category.friendly.find(params[:id])
     end
   
     def category_params

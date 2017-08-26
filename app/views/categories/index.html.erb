@@ -8,7 +8,9 @@
           <br>
           <span class="full-name-category-index"><%= link_to category.name, category_path(category) %></span><br>
           <span class="category-products">This category have <%= pluralize(category.products.count, "product")%>.</span><br><br>
+          <% if signed_in? %>
             <%= link_to "Edit Category", edit_category_path(category), class: "btn-actions-category" if User.admin_types.include?(current_user.type) %>
+          <% end %>
         </div>
       </div>
     </div>
