@@ -1,6 +1,6 @@
 class CategoriesController < ApplicationController
     
-    before_action :set_category, only: [:edit, :update, :show, :destroy]
+  before_action :set_category, only: [:edit, :update, :show, :destroy]
 
   def new
     @category = Category.new
@@ -32,8 +32,7 @@ class CategoriesController < ApplicationController
   end
   
   def index
-    #@categories = Category.paginate(page: params[:page], per_page: 5)
-    @categories = Category.all
+    @categories = Category.paginate(:page => params[:page], :per_page => 6)
   end
   
   def destroy

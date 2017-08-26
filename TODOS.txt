@@ -28,15 +28,6 @@ X Implement a image by default.
 X Integration of flash messages.
 ----- VIEWS TODOS -----
 
------ ROUTES TODOS -----
-X Change users link to sellers.
-X Change users/sign_in to login_path.
-X Change users/sign_out to login_path destroy method.
-X Change users/register to register_path.
-X Creation of a path for seller-name/products
-6.- Creation of a path for seller-name/categories
------ ROUTES TODOS -----
-
 ----- GUI TODOS -----
 User View
 
@@ -49,6 +40,16 @@ X Add label for categories present in a user show view.
 X Fix the footer in the show user view.
 8.- Categories View
 ----- GUI TODOS -----
+
+----- ROUTES TODOS -----
+X Change users link to sellers.
+X Change users/sign_in to login_path.
+X Change users/sign_out to login_path destroy method.
+X Change users/register to register_path.
+X Creation of a path for seller-name/products
+6.- Creation of a path for seller-name/categories
+----- ROUTES TODOS -----
+
 
 ----- RSPEC TODOS -----
 X Creation of a user.
