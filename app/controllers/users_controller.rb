@@ -17,7 +17,6 @@ class UsersController < ApplicationController
 	end
 	
 	def update
-		#authorize @user
 		if @user.update(user_params)
 			flash[:notice] = "The user #{@user.full_name} was updated successfully."
 			redirect_to seller_path(@user)

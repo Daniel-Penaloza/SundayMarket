@@ -1,6 +1,13 @@
 class CategoriesController < ApplicationController
     
-    before_action :set_category, only: [:edit, :update, :show, :destroy]
+  before_action :set_category, only: [:edit, :update, :show, :destroy]
+
+  def index
+    @categories = Category.paginate(:page => params[:page], :per_page => 6)
+  end
+
+  def show
+  end
 
   def new
     @category = Category.new
@@ -26,15 +33,6 @@ class CategoriesController < ApplicationController
       render 'edit'
     end
   end
-
-  def show
-    #@category_products = @category.products
-  end
-  
-  def index
-    #@categories = Category.paginate(page: params[:page], per_page: 5)
-    @categories = Category.all
-  end
   
   def destroy
     @category.destroy
@@ -43,13 +41,12 @@ class CategoriesController < ApplicationController
   end
 
   private
-
-  def set_category
-    @category = Category.find(params[:id])  
-  end
+    def set_category
+      @category = Category.friendly.find(params[:id])
+    end
   
-  def category_params
-    params.require(:category).permit(:name, :cat_image)
-  end
+    def category_params
+      params.require(:category).permit(:name, :cat_image)
+    end
   
 end

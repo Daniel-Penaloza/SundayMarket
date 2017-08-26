@@ -9,10 +9,10 @@
         <%= link_to "#{current_user.full_name}<span class='caret'></span>".html_safe %> 
         <div>
           <ul>          
-            <li><%= link_to "Products", "" %></li>
+            <li><%= link_to "Products", seller_products_path(current_user) %></li>
             <li><%= link_to "Categories", "" %></li>
-            <li><%= link_to "New product", "" %></li>
-            <li><%= link_to "New category", "" %></li>
+            <li><%= link_to "New product", new_product_path %></li>
+            <li><%= link_to "New category", new_category_path %></li>
             <li>
               <%= link_to "Edit Profile", edit_seller_path(current_user) if current_user.class.name == "User" %>
             </li>

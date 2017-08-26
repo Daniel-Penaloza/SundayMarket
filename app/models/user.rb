@@ -8,8 +8,11 @@ class User < ApplicationRecord
 
   #-----------------------Validations-------------------#
   validates_presence_of :first_name, :last_name
+  
+  #----------------------- Uploader -----------------------#
   mount_uploader :image, UserImageUploader
 
+  #----------------------- User Admin Types -----------------------# 
   def self.admin_types
   	["AdminUser"]
   end
@@ -20,6 +23,11 @@ class User < ApplicationRecord
 
   def full_name
     ("#{first_name} #{last_name}").titleize
+  end
+
+  #-----------Avoiding The Repeated Elements In The User Categories------------#
+  def category_no_repeated
+      self.categories.distinct.pluck(:id, :name)
   end
 
   #-----------------------Adding A Default Image To The User -------------------#

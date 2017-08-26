@@ -1,47 +1,36 @@
-<center>
-<h1> <%= @category.name %></h1>
-</center>
-
-<% if @category.products.any? %>
-<div class="wellc">
-  <i>  <%= @category.products.count %> products found in <%= @category.name.capitalize %> </i><br><br>
-      
-      <% @category.products.each do |p| %>
-        <div class="wrapper">
-        <div class="box a">
-          <% if p.image? %>
-          <%= link_to(image_tag(p.image), product_path(p)) %>
-          <% else %>
-          <%= link_to(image_tag("http://www.thecellartrust.org/wp-content/uploads/2016/04/Product-Image-Coming-Soon.png"), product_path(p)) %>
-          <% end %>
-          </div>
+<section class="section-category-show">
+  <h1><%= @category.name.titleize %></h1>
+  <h5>This category has <%= pluralize(@category.products.count, "product") %></h5>
   
-        <div class="box b">  <h3><%= p.name.capitalize %> </h3><br>
-        <p><b>Product summary:</b> <%= p.summary %> <br></p>
-        <% if p.description.any? %> <br>
-        <b>List from the description array:</b>
-          <ul>
-            <% p.description.each do |desc| %> 
-                <li><%= desc %></li>
+  <% if @category.products.any? %>
+    <% @category.products.each do |product| %>
+      <div class="row">
+        <div class="col span-1-of-3">
+          <div class="category-info-show">
+            <%= link_to image_tag(product.image), product_path(product), class: "product-show-view" %>
+            <br>
+            <span class="product-name-category"><%= link_to product.name, product_path(product) %></span>
+            <br>
+            <span class="product-summary"><%= product.summary %></span>
+            <% product.description.each do |product| %>
+              <ul class="product-description">
+                <li><%= product %></li>
+              </ul>
             <% end %>
-          </ul>
-
-        <% end %> <br>
-        <b>Sold by: </b><%= p.user.first_name %>  <%= p.user.last_name %> <br> <%= p.user.phone %>  |  <%= p.user.email %>  <br>
-</div>
-        
-        <div class="box c"><p><%= link_to "More from this seller", user_path(p), class: "cat-btn-file" %></p></div>
-        <div class="box d"><b><p>Price: £</b> <%= p.price %></div></p>
-        <div class="box e">
-        <% if User.admin_types.include?(current_user.try(:type)) %>
-        <%= link_to "Edit Product", edit_product_path(p), class: "cat-btn-file"  %> / <%= link_to "Delete", product_path(p), class: "cat-btn-file", method: :delete,
-              data: { confirm: "Are you sure you want to delete this product?" }  %></p></div>
-        <% end %>
+            <span class="product-category-description"><%= product.price %></span>
+            <br>
+            <span class="product-seller">Sold by: <%= link_to product.user.full_name, seller_path(product.user) %></span>
+            <br><br>
+            <div class="product-actions">
+              <% if User.admin_types.include?(current_user.try(:type)) %>
+                <%= link_to "Edit Product", edit_product_path(product), class: "btn-submit"  %> 
+                <%= link_to "Delete", product_path(product), class: "btn-submit", method: :delete,
+                  data: { confirm: "Are you sure you want to delete this product?" }  %>
+              <% end %>
+            </div>
+          </div>
         </div>
-        <br>
-     <% end %>
-  <% else %>
-    <h4 align="center"> There are no products in the <%= @category.name.capitalize %> category yet! </h4>
+      </div>
+    <% end %>
   <% end %>
-  </div>
-</div>
+</section>

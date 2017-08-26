@@ -1,40 +1,19 @@
-<center><h1> Explore by Category </h1></center>
-
-<% if @categories.any? %>
-<div class="wellc">
-  <i>There are currently <%= @categories.count %> categories to browse. </i>
-  <% else %>
-   There are no categories yet.
-  <% end %>
-  </div>
-
-
-   <% @categories.each do |cat| %>
-    <div class="wellc">
-
-    <div class="wrapper">
-      <div class="box a"><%= link_to image_tag(cat.cat_image), category_path(cat) %></div>
-      <div class="box b"><h2><%= cat.name.capitalize %> </h2> <br>
-      <%if cat.products.any?%>
-        <b>Sellers who have items in this category:</b> <br> <br>
-        <ul>
-          <% cat.products.each do |prod| %>
-             <li><%= link_to prod.user.first_name, seller_path(prod) %></li>
+<section class="index-categories">
+  <h1>Explore By Category</h1>
+  <% @categories.each do |category| %>
+    <div class="row">
+      <div class="col span-1-of-3">
+        <div class="user-info-category">
+          <%= image_tag(category.cat_image, size: "100x200", class: "category-image-index")%>
+          <br>
+          <span class="full-name-category-index"><%= link_to category.name, category_path(category) %></span><br>
+          <span class="category-products">This category have <%= pluralize(category.products.count, "product")%>.</span><br><br>
+          <% if signed_in? %>
+            <%= link_to "Edit Category", edit_category_path(category), class: "btn-actions-category" if User.admin_types.include?(current_user.type) %>
           <% end %>
-        </ul>
-      <% else %>
-      <p> There are no products in this category yet!</p>
-      <% end %>
-        
+        </div>
       </div>
-      <div class="box c"><%= link_to "Browse category", category_path(cat), class: "cat-btn-file" %></div>
-      <div class="box d"><p>Products in this category: <%= cat.products.count %></div>
-      <div class="box e">
-      <% if User.admin_types.include?(current_user.try(:type)) %>
-      <%= link_to "Edit Category", edit_category_path(cat), class: "cat-btn-file"  %> / <%= link_to "Delete", category_path(cat), class: "cat-btn-file", method: :delete,
-            data: { confirm: "Are you sure you want to delete this catgory?" }  %></p></div>
-            <% end %>
     </div>
-  </div> 
-
-     <% end %>
+  <% end %>
+</section>
+<%= will_paginate @categories %>
