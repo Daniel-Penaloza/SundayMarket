@@ -1,0 +1,8 @@
+<div class="col span-3-of-3">
+	<% flash.each do |type, message|%>
+	  <div class="alert alert-<%= type %> alert-dismissable">
+	  	<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+	  	<strong><%= message %></strong>
+	  </div>
+	<% end %>	
+</div>

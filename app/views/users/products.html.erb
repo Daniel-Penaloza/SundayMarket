@@ -1,0 +1,25 @@
+<section class="section-user-products">
+	<div class="user-products-information">
+		<%= image_tag(@user.image, size: "150x150") %>
+		<h1><%= link_to @user.full_name, seller_path(@user) %></h1>
+		<h4><%= @user.products.count %> Current Products In Stock</h4>
+		<hr> 
+	</div>
+</section>
+
+<%= will_paginate @user_products %>
+<section class="section-product">
+	<% @user_products.each do |product| %>	
+	 	<div class="row">
+		 	<div class="col span-1-of-3">
+			 	<div class="product-information">
+		 			<%= image_tag(product.image, size: "350x280", alt: "product_image" ) %>
+
+		 			<span class="product-name"><%= link_to product.name, product_path(product) %></span><br>
+					<span class="product-summary"><%= product.summary %></span><br>
+					<span class="product-price">$ <%= product.price %></span><br>
+			 	</div>
+		 	</div>
+	 	</div>
+	<% end %>
+</section>

@@ -2,7 +2,7 @@
 	<div class="row">
 		<div class="col span-1-of-3">
 			<div class="image-container">
-				<%= image_tag(@user.image, size: "300x300", alt: "user_image" ) %>
+				<%= image_tag(@user.image, size: "250x250", alt: "user_image" ) %>
 			</div>
 		</div>
 
@@ -21,9 +21,14 @@
 				<span class="email-of-user">Email: <%= @user.email %></span><br>
 				<span class="phone-of-user">Phone: <%= @user.phone %></span><br>
 				<span class="products-of-user">Number of products to sell: <%= @user.products.count %></span><br>
+				<span class="categories-of-user">Active Categories: </span> 
+					<% @user.category_no_repeated.each do |category| %>
+						<span class="category-name">
+							<%=link_to category[1], category_path(category[0]) %>
+						</span>
+					<% end %>
 				<div class="products-user">
-					<%= link_to "Products to sell", user_products_path(@user), class: "btn-actions" %>
-					<%= link_to "Categories present", "", class: "btn-actions" %>
+					<%= link_to "Products to sell", seller_products_path(@user), class: "btn-actions" %>
 				</div>
 			</div>
 		</div>
