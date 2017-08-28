@@ -41,9 +41,9 @@ X Fix the footer in the show user view.
 
 Categories View
 X Index categories view
-9.- Show category view
-10.- Edit category view
-
+X Show category view
+X Edit category view
+X New category view
 ----- GUI TODOS -----
 
 ----- ROUTES TODOS -----
@@ -78,6 +78,8 @@ X Installation of pundit gem.
 
 ----- USER POLICIES TODOS -----
 X Only the owner(or administrator) of the profile can edit his own profile.
+X Only the administrator can create or edit a category.
+
 2.- Only the owner of a product can delete.
 ----- USER POLICIES TODOS -----
 

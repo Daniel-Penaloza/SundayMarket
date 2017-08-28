@@ -1,13 +1,29 @@
-<%= form_for @category do |category| %>
-  <div class="row">
-    <div class="col span-1-of-3">
-      <div class="form-group">
-        <%= category.text_field :name, class: "input-field", placeholder: "Caegory Name" %>
-      </div>
-    </div>
-  </div>
+	<div class="row">
+		<div class="col-span-3-of-3">
+			<%= form_for @category do |category| %>
+				<div class="category-form">
+					<div class="form-group">
+						<%= category.label :name, class: "input-label" %>
+						<%= category.text_field :name, class: "input-field" %>
+					</div>
 
-  <div class="row">
-    
-  </div>
-<% end %>
+					<% if @category.cat_image %>
+						<h4>Current Image</h4>
+						<%= image_tag(@category.cat_image) %>
+						<div class="image-upload">
+							<label for="file-input">
+								<span class="btn-file">
+									<%= @category.new_record? ? "Update The Image" : "Select A New Image" %>
+								</span>
+							</label>
+							<%= category.file_field :cat_image, id: "file-input" %>
+						</div>
+					<% else %>
+						<h4>This Category Has Not Yey Image!</h4>
+					<% end %>
+					
+					<%= category.submit @category.new_record? ? "Create A Category" : "Update The Category", class: "btn-submit" %>	
+				</div>
+			<% end %>
+		</div>
+	</div>
