@@ -52,7 +52,6 @@ X Change users/sign_in to login_path.
 X Change users/sign_out to login_path destroy method.
 X Change users/register to register_path.
 X Creation of a path for seller-name/products
-6.- Creation of a path for seller-name/categories
 ----- ROUTES TODOS -----
 
 
