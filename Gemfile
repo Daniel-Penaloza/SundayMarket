@@ -21,6 +21,8 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'database_cleaner'
   gem 'factory_girl_rails', '~> 4.8'
+  # Loads Environment Variables
+  gem 'dotenv-rails', require: 'dotenv/rails-now'
 end
 
 group :development do
@@ -39,6 +41,9 @@ gem 'devise', '~> 4.3'
 
 # Uploading Process
 gem 'carrierwave', '~> 1.1'
+gem 'carrierwave-aws', '~> 1.1'
+gem 'mini_magick', '~> 4.7'
+
 
 # JavaScripts -> Jquery
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'

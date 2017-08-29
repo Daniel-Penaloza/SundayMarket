@@ -80,7 +80,7 @@ X Installation of pundit gem.
 X Only the owner(or administrator) of the profile can edit his own profile.
 X Only the administrator can create or edit a category.
 
-2.- Only the owner of a product can delete.
+2.- Only the owner or administrator of a product can delete.
 ----- USER POLICIES TODOS -----
 
 

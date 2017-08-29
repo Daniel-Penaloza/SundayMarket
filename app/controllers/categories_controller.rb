@@ -10,9 +10,11 @@ class CategoriesController < ApplicationController
 
   def new
     @category = Category.new
+    authorize @category
   end
   
   def create
+    authorize @category
     @category = Category.new(category_params)
     if @category.save
       redirect_to categories_path(@category)
@@ -38,7 +40,7 @@ class CategoriesController < ApplicationController
   
   def destroy
     @category.destroy
-    flash[:warning] = "Goal successfully deleted!"
+    flash[:notice] = "Category successfully deleted!"
     redirect_to categories_path
   end
 
