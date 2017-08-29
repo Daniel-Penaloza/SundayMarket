@@ -11,6 +11,9 @@
 /db/*.sqlite3
 /db/*.sqlite3-journal
 
+# Ignore the contents of the public folder
+/public/*
+
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
