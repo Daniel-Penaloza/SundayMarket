@@ -3,6 +3,10 @@ class UserPolicy < ApplicationPolicy
 		return true if user_or_admin
 	end
 
+	def update?
+		return true if user_or_admin
+	end
+
 	private
 		def user_or_admin
 			record.id == user.id || admin?

@@ -17,9 +17,9 @@
   float: left;
   border: 1px solid #ccc;
   border-radius: 5px;
-  width: 70%;
+  width: 90%;
   height: 350px;
-  margin-left: 18%;
+  margin-left: 10%;
   margin-bottom: 10%;
   overflow: hidden;
   text-align: center;
@@ -152,3 +152,57 @@
 /* --------------------------------------------------------*/
 /* SHOW VIEW FOR CATEGORIES */
 /* --------------------------------------------------------*/   
+
+/* --------------------------------------------------------*/
+/* EDIT VIEW FOR CATEGORIES */
+/* --------------------------------------------------------*/   
+.section-form-category {
+  float: left;
+  width: 100%;
+}
+
+.section-form-category h1 {
+  text-align: center;
+  margin-top: -3%;
+}
+
+.category-form {
+  float: left;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 80%;
+  margin-left: 10%;
+  padding: 5%;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  &:hover {
+    box-shadow: 0 14px 18px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  }
+}
+
+.category-form {
+  text-align: center;
+}
+
+.category-form h4 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.category-form img {
+  overflow: hidden;
+  width: 100%;
+  height: 1%;
+  border-radius: 2px;
+}
+
+.category-form .btn-file {
+  width: 30%;
+  margin-left: 35%;
+}
+
+.category-form .btn-submit {
+  margin-top: 5%;
+}
