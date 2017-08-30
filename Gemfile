@@ -64,3 +64,7 @@ gem 'will_paginate', '~> 3.1', '>= 3.1.6'
 
 # Policies for the actions
 gem 'pundit', '~> 1.1'
+
+#Javascript Libraries
+gem 'waypoints_rails'
+gem 'listen', '>= 3.0.5', '< 3.2'
