@@ -1,0 +1,29 @@
+.product-container {
+	float: left;
+	border: 5px solid #ddd;
+	border-radius: 5%;
+	overflow: hidden;
+	margin-left: 15%;
+	background-color: #30d14a;
+}
+
+.product-index-name a {
+	margin-left: 10px;
+	text-decoration: none;
+	font-weight: bold;
+	color: #000;
+	&:hover {
+		color: #fff;
+		transition: color 0.5s;
+	}
+}
+
+.product-index-summary {
+	margin-left: 10px;
+	color: #fff;
+	font-weight: bold;
+}
+
+.product-container cite {
+	margin-left: 130px;
+}
