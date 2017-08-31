@@ -13,4 +13,7 @@ class Product < ApplicationRecord
   	default_scope -> { order(updated_at: :desc) }
 
   	mount_uploader :image, ProductImageUploader
+
+  	extend FriendlyId
+	friendly_id :name, use: :slugged
 end
