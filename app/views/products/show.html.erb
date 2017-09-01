@@ -1,0 +1,36 @@
+<div class="wellc">
+  <div class ="wrapper">
+    <div class="box a">
+      <%= image_tag("http://www.livecircular.com/wp-content/uploads/2016/10/other-electronic-reviews.jpg")%>
+    </div>
+    <div class="box b">
+      <h3> <%= @product.name %> </h3><br>
+      <br>
+      <b>Summary</b></br>
+      <%= @product.summary %>
+      </br>
+      <b>Caracteristics:</b>
+      <ul>
+        <% @product.description.each do |description| %>
+          <% if description != "" %>
+            <li> <%= description %> <li>
+          <% end %>
+        <% end %>
+      </ul>
+    </div>
+    <div class="box c">
+      <b>Sold by: <%= @product.user.first_name %></b>
+    </div>
+    <div class="box d">
+      Price:<%= number_to_currency(@product.price, unit: "U$") %>
+    </div>
+    <div>Category: <%= @product.category.name%></div>
+    <div class="box e">
+      <% if current_user == @product.user %>
+        <%= link_to "Edit", edit_product_path(@product)%>
+        <%= link_to "Delete",product_path(@product), method: :delete,
+                            data: { confirm: "Are you sure about that?"} %>
+      <% end %>
+    </div>
+  </div>
+</div>
