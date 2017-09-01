@@ -1,29 +1,119 @@
+/* --------------------------------------------------------*/
+/* INDEX VIEW FOR PRODUCTS */
+/* --------------------------------------------------------*/ 
+.section-product-index {
+	float: left;
+	width: 100%;
+}
+
 .product-container {
 	float: left;
 	border: 5px solid #ddd;
 	border-radius: 5%;
 	overflow: hidden;
 	margin-left: 15%;
-	background-color: #30d14a;
 }
 
 .product-index-name a {
-	margin-left: 10px;
+	margin-left: 3%;
 	text-decoration: none;
+	color: #4366f5;
 	font-weight: bold;
-	color: #000;
-	&:hover {
-		color: #fff;
+	&:hover{
+		color: #000;
 		transition: color 0.5s;
 	}
 }
 
-.product-index-summary {
-	margin-left: 10px;
-	color: #fff;
+.product-index-price span {
+	margin-left: 3%;
+	font-size: 100%;
+	opacity: .5;
+	color: #555;
 	font-weight: bold;
 }
 
 .product-container cite {
 	margin-left: 130px;
 }
+
+/* --------------------------------------------------------*/
+/* INDEX VIEW FOR PRODUCTS */
+/* --------------------------------------------------------*/ 
+
+/* --------------------------------------------------------*/
+/* SHOW VIEW FOR PRODUCTS */
+/* --------------------------------------------------------*/ 
+
+.product-show {
+  float: left;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 70%;
+  margin-left: 15%;
+  padding: 15px 15px;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  &:hover {
+    box-shadow: 0 14px 18px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  }
+}
+
+.product-show-name {
+	font-size: 150%;
+	font-weight: bold;
+	color: #000;
+}
+
+.product-show-price {
+	float: right;
+	font-weight: bold;
+}
+
+.product-show-summary {
+	opacity: 0.8;
+	font-size: 80%;
+}
+
+.product-show-description {
+	margin-top: 20px;
+	color: #000;
+	font-weight: bold;
+	opacity: 0.9;
+}
+
+.product-show-description ul {
+	font-size: 80%;
+	margin-left: 15px;
+	color: #555;
+	font-weight: lighter;
+}
+
+.product-show-description li {
+	margin-bottom: 2px;
+}
+
+.product-show-seller {
+	margin-top: 50px;
+	float: right;
+}
+
+.product-show-seller a {
+	text-decoration: none;
+	color: #4366f5;
+	font-weight: bold;
+	&:hover{
+		color: #000;
+		transition: color 0.5s;
+	}
+}
+
+.product-show-seller img {
+	border-radius: 50%;
+}
+/* --------------------------------------------------------*/
+/* SHOW VIEW FOR PRODUCTS */
+/* --------------------------------------------------------*/ 
+

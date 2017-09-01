@@ -1,0 +1,31 @@
+<section class="section-product-show">
+		<div class="row">
+			<div class="product-show">
+				<div class="col span-1-of-3">
+					<%= image_tag(@product.image, size: "250x250", class: "product-show-image" )%>
+				</div>
+
+				<div class="col span-2-of-3">
+					<span class="product-show-name"><%= @product.name %></span>
+					<span class="product-show-price">Price: $ <%= @product.price %></span>
+					<div class= "product-show-summary">
+						<i><%= @product.summary %></i>
+					</div>
+					
+					<div class="product-show-description">
+						More About This Product
+						<% @product.description.each do |description| %>
+							<ul>
+								<li><%= description %></li>
+							</ul>
+						<% end %>
+					</div>
+
+					<div class="product-show-seller">
+						Sold by: <%= link_to (@product.user.full_name), seller_path(@product.user) %> 
+						<%= link_to image_tag(@product.user.image, size: "50x50" ), seller_path(@product.user) %>
+					</div>
+				</div>
+			</div>
+		</div>
+</section>
