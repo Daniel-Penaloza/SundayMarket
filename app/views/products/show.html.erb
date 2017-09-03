@@ -7,16 +7,23 @@
 
 				<div class="col span-2-of-3">
 					<span class="product-show-name"><%= @product.name %></span>
-					<span class="product-show-price">Price: $ <%= @product.price %></span>
+					<span class="product-show-price">Price: $ <%= @product.price %> <br>
+						<% if user_signed_in? && (User.admin_types.include?(current_user.type) || @product.user_id == current_user.id)%>
+							<span class="icons-show-product">
+								<%= link_to "", edit_product_path(@product), class: "fa fa-pencil-square-o icon-green", id: "product_#{@product.id}_edit" %>
+								<%= link_to "", product_path(@product), method: :delete, class: "fa fa-trash-o icon-red", id: "product_#{@product.id}_delete" %>	
+							</span>
+						<% end %>
+					</span>
 					<div class= "product-show-summary">
 						<i><%= @product.summary %></i>
 					</div>
 					
 					<div class="product-show-description">
 						More About This Product
-						<% @product.description.each do |description| %>
+						<% @product.descriptions.each do |description| %>
 							<ul>
-								<li><%= description %></li>
+								<li><%= description.name %></li>
 							</ul>
 						<% end %>
 					</div>

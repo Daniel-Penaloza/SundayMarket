@@ -1,13 +1,15 @@
 <section class="section-product-index">
+<h1>List Of All Products </h1>
 	<% @products.each do |product| %>
 		<div class="row">
 			<div class="col span-1-of-3">
 				<div class="product-container">
 					<%= link_to image_tag(product.image, size:"250x250"), product_path(product), class: "product-image"%> <br>
-					<span class="product-index-name"><%= link_to product.name, product_path(product) %></span> <br>
+					<span class="product-index-name"><%= link_to product.name, product_path(product), id: "product_#{product.id}_name" %></span> <br>
+					<span class="product-index-summary"><%= product.summary %></span>
 					<div class="product-index-price">
 						<span>$ <%= product.price %></span> 
-						<cite>Sold By: <%= link_to image_tag(product.user.image, size: "50x50"), seller_path(product.user) %></cite>
+						<cite>Sold By: <%= link_to image_tag(product.user.image, size: "50x50"), seller_path(product.user), id: "user_product_#{product.user_id}"%></cite>
 					</div>
 				</div>
 			</div>			

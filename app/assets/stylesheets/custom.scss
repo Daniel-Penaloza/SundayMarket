@@ -125,6 +125,39 @@ section {
 /* BUTTONS */
 /* --------------------------------------------------------*/ 
 
+/* --------------------------------------------------------*/
+/* ICONS */
+/* --------------------------------------------------------*/ 
+
+.icon-green {
+  text-decoration: none;
+  color: white;
+  background-color: #4CD762;
+  border-radius: 50%;
+  padding: 15px 15px;
+  &:hover {
+    background-color: #76e087;
+  }
+}
+
+.icon-red {
+  text-decoration: none;
+  color: white;
+  background-color: #dc3412;
+  border-radius: 50%;
+  padding: 15px 15px;
+  &:hover {
+    background-color: #f06042;
+  }
+}
+
+.icons-show-product {
+  margin-left: 10%;
+}
+/* --------------------------------------------------------*/
+/* ICONS */
+/* --------------------------------------------------------*/ 
+
 
 /* --------------------------------------------------------*/
 /* NAVIGATION MENU */

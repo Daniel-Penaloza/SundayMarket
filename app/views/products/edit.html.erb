@@ -1,0 +1,24 @@
+<section class="form-product">
+	<%= form_for @product do |product| %>
+		<%= product.label :name %>
+		<%= product.text_field :name %>
+		
+		<%= product.label :summary %>
+		<%= product.text_field :summary %>
+
+		<%= product.label :price %>
+		<%= product.number_field :price %>
+		
+		<div class="row">
+		<h1>Descriptions: </h1>
+			<div class="col span-3-of-3">
+			<%= product.fields_for :descriptions do |description_form| %>
+				<%= render 'description_fields', f: description_form %>
+			<% end %>
+		<%= link_to_add_association "Add Description", product, :descriptions %>
+		</div>
+		</div>
+
+		<%= product.submit %>
+	<% end %>
+</section>
