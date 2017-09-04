@@ -4,6 +4,23 @@ class ProductsController < ApplicationController
 		@products = Product.paginate(:page => params[:page], :per_page => 6)
 	end
 
+	def new
+		@product = Product.new
+	end
+
+	def create
+		@product = Product.new(product_params)
+		@product.user_id = current_user.id
+		byebug
+		if @product.save 
+			flash[:notice] = "The product was created successfully"
+			redirect_to product_path(@product)
+		else
+			flash[:warning] = "There was a problem trying to create the product"
+			render :new
+		end
+	end
+
 	def show
 	end
 
@@ -27,7 +44,9 @@ class ProductsController < ApplicationController
 		end
 
 		def product_params
-			params.require(:product).permit(:name, :price, :summary, :image,
+			#description_attributes  is a method provided by the cocoon gem that allows to use nested attributes for other
+			#models.
+			params.require(:product).permit(:name, :price, :summary, :image, :category_id,
 											descriptions_attributes: [:id, :name, :_destroy])
 		end
 end

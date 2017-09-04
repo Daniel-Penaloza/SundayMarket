@@ -1,0 +1,53 @@
+<%= form_for @product do |product| %>
+	<div class="row">
+		<div class="col span-1-of-3 product-fields">
+			<div class="form-group">
+				<span class="input-label">Category</span>
+				<%= product.collection_select :category_id, Category.order(:name),:id,:name, include_blank: true %>
+			</div>
+
+			<div class="form-group">
+				<%= product.label :name, class: "input-label" %>
+				<%= product.text_field :name, class: "input-field" %>
+			</div>
+			
+			<div class="form-group">
+				<%= product.label :summary, class: "input-label" %>
+				<%= product.text_field :summary, class: "input-field" %>
+			</div>
+		
+			<div class="form-group">
+				<%= product.label :price, class: "input-label" %>
+				<%= product.number_field :price, class: "input-field" %>
+			</div>
+			
+
+			<div class="form-group">
+				<%= product.fields_for :descriptions do |description_form| %>
+					<%= render 'description_fields', f: description_form %>
+				<% end %>
+				<br>
+				<%= link_to_add_association "Add Description", product, :descriptions, class: "btn-submit" %>
+			</div>
+		</div>
+
+		<div class="col span-2-of-3">
+			<div class="image-product-container">
+				<h3>Current Image</h3>
+				<%= image_tag(@product.image) %>
+				<div class="image-upload">
+					<label for="file-input">
+						<span class="btn-file">Select A New File</span>
+					</label>
+					<%= product.file_field :image, id: "file-input" %>
+				</div>
+			</div>
+		</div>
+	</div>	
+	
+	<div class="row">
+		<div class="col span-3-of-3">
+			<%= product.submit @product.new_record? ? "Create A Product" : "Update The Product", class: "btn-actions" %>
+		</div>
+	</div>
+<% end %>
