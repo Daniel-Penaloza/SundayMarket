@@ -11,7 +11,7 @@ describe 'navigate' do
 		end
 
 		it "can have content" do
-			expect(page).to have_content("Brand Name")
+			expect(page).to have_content("Sunday Market!")
 			expect(page).to have_content("Sellers")
 			expect(page).to have_content("Products")
 			expect(page).to have_content("Categories")

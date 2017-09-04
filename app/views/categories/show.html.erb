@@ -12,9 +12,9 @@
             <span class="product-name-category"><%= link_to product.name, product_path(product) %></span>
             <br>
             <span class="product-summary"><%= product.summary %></span>
-            <% product.description.each do |product| %>
+            <% product.descriptions.each do |description| %>
               <ul class="product-description">
-                <li><%= product %></li>
+                <li><%= description.name %></li>
               </ul>
             <% end %>
             <span class="product-category-description"><%= product.price %></span>

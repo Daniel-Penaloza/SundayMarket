@@ -2,7 +2,7 @@
   <ul>         
     <li><%= link_to "Sunday Market!", root_path %></li>
     <li><%= link_to "Sellers", sellers_path %></li>
-    <li><%= link_to "Products", products_path %></li>
+    <li><%= link_to "Products", products_path, id: "products_index_path" %></li>
     <li><%= link_to "Categories", categories_path %></li>
     <% if signed_in? %>
       <li class="user-actions">
