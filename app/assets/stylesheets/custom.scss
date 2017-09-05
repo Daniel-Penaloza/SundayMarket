@@ -292,6 +292,10 @@ nav > ul > li > div ul > li:hover > a {
    float: right;
 }
 
+.login-actions em {
+  font-size: 60%;
+}
+
 a.current-user-actions {
   margin-top: 60px;
   position:absolute;

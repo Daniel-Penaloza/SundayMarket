@@ -24,7 +24,7 @@
         </div>
       </li>
       <% else %>
-      <li class="login-actions"><%= link_to "Login", new_user_session_path %></li>
+      <li class="login-actions"><%= link_to "Login <em>(for shops only)</em>".html_safe, new_user_session_path %></li>
       <li class="login-actions"><%= link_to "Register", new_user_registration_path %></li>
     <% end %>
   </ul>
