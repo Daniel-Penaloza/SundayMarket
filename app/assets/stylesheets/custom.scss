@@ -677,46 +677,44 @@ footer p {
 
 .section-market-images {
   float: left;
+  position: relative;
   margin-top: 100px;
   margin-bottom: 50px;
   width: 100%;
   padding: 0;
+  background-color: #eee;
+  padding: 40px 0;
+  text-align: center;
 }
 
-.market-showcase {
-  list-style: none;
-  width: 100%;
-}
-
-.market-showcase li {
-  display: block;
-  float: left;
-  width: 25%;
-}
-
-.market-photo {
-  width: 100%;
-  margin: 0;
-  overflow: hidden;
-  background-color: #000;
-}
-
-.market-photo img {
-  opacity: 0.7;
-  width: 100%;
-  height: 400px;
-  -webkit-transform: scale(1.10);
-          transform: scale(1.10);
+.section-market-images img {
+  border-radius: 5%;
+  opacity: 0.5;
+  height: 300px;
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05);
   -webkit-transition: opacity 0.7s, -webkit-transform 0.5s;
-  transition: opacity 0.7s, -webkit-transform 0.5s;
-  transition: transform 0.5s, opacity 0.7s;
-  transition: transform 0.5s, opacity 0.7s, -webkit-transform 0.5s;
+  transition: opacity 0.5s, -webkit-transform 0.5s;
+  transition: transform 0.5s, opacity 0.5s;
+  transition: transform 0.5s, opacity 0.5s, -webkit-transform 0.5s;
 }
 
-.market-photo img:hover {
-  -webkit-transform: scale(1.03);
-          transform: scale(1.03);
+.section-market-images img:hover {
+  -webkit-transform: scale(1.10);
+  transform: scale(1.10);
   opacity: 1;
+}
+
+.category-text-image {
+  float: left;
+  position: absolute;
+  top: 60%;
+  color: #000;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  margin-left: 12.5%;
+  font-size: 200%;
+  font-weight: 600;
 }
 
 .section-what-i-need {

@@ -20,30 +20,15 @@
 </section>
 
 <section class="section-market-images">
-      <ul class="market-showcase clearfix">
-        <li>
-          <figure class="market-photo">
-            <%= image_tag("vegetables.jpg") %>
-          </figure>
-        </li>
-
-        <li>
-          <figure class="market-photo">
-            <%= image_tag("cellphone.jpg") %>
-          </figure>
-        </li>
-        
-        <li>
-          <figure class="market-photo">
-            <%= image_tag("laptop.jpg") %>
-          </figure>
-        </li>
-        
-        <li>
-          <figure class="market-photo">
-            <%= image_tag("books.jpg") %>
-          </figure>
-        </li>
+	<h1>Available Categories</h1>
+	<div class="row">
+		<% @categories.each do |category| %>
+			<div class="col span-1-of-3">
+				<span class="category-text-image"><%= category.name %></span>
+				<%= link_to image_tag(category.cat_image, size: "350x300"), category_path(category) %>
+			</div>
+		<% end %>
+	</div>
 </section>
 
 

@@ -11,7 +11,6 @@ class ProductsController < ApplicationController
 	def create
 		@product = Product.new(product_params)
 		@product.user_id = current_user.id
-		byebug
 		if @product.save 
 			flash[:notice] = "The product was created successfully"
 			redirect_to product_path(@product)

@@ -14,8 +14,8 @@ class CategoriesController < ApplicationController
   end
   
   def create
-    authorize @category
     @category = Category.new(category_params)
+    authorize @category
     if @category.save
       redirect_to categories_path(@category)
       flash[:notice] = "The category was created successfully."

@@ -13,4 +13,15 @@ class Category < ApplicationRecord
   	#-----------------------Permalink-----------------------#
     extend FriendlyId
 	friendly_id :name, use: :slugged
+
+	private
+		def self.shuffle_images
+			categories = Category.all
+			selected_categories = categories.shuffle[0..2]
+			categories_array = []
+			selected_categories.each do |category|
+				categories_array <<  category
+			end
+			categories_array
+		end
 end
