@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
 	def index
-		@categories = Category.shuffle_images
+		@categories = Category.all[0..17]
 	end
 end

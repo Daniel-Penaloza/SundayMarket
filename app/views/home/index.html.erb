@@ -23,15 +23,17 @@
 	</div>
 </section>
 
+
 <section class="section-market-images">
-	<h1>Available Categories</h1>
+	<%= link_to "View All Categories", categories_path, class: "btn-categories" %>
 	<div class="row">
-		<% @categories.each do |category| %>
-			<div class="col span-1-of-3">
-				<span class="category-text-image"><%= category.name %></span>
-				<%= link_to image_tag(category.cat_image, size: "350x300"), category_path(category) %>
-			</div>
-		<% end %>
+		<ul>
+			<% @categories.each do |category| %>
+				<div class="categories-homepage">
+					<li><%= link_to image_tag(category.cat_image, size: "185x185"), category_path(category) %></li>
+				</div>
+			<% end %>
+		</ul>
 	</div>
 </section>
 
