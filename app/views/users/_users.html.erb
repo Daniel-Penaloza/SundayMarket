@@ -2,24 +2,24 @@
 	<div class="row">
 		<div class="col span-1-of-3">
 			<div class="user-info-index">
+				<% if signed_in? %>
+					<div class="seller-actions">
+						<i><%= link_to "", edit_user_path(user), class: "fa fa-pencil" if user.id == current_user.id || User.admin_types.include?(current_user.type)%></i>
+						<i><%= link_to "", user_path(user), method: :delete, class: "fa fa-ban" if User.admin_types.include?(current_user.type) %></i>
+					</div>
+				<% end %>
+				
+
 				<%= image_tag(user.image, size: "100x200", class: "user-image-index")%>
 				<br>
 				<span class="full-name-user-index"><%= link_to user.full_name, seller_path(user) %></span>
 				<br />
-				<span class="type-of-user">
-					<% if user.type %>
-						<%= user.type %>
-					<% else %>
-						Seller
-					<% end %>	
-				</span>
-				<br />
 				<span class="user-index-description">
-					This user has <%= user.products.count %> products & he is present in <%= user.category_no_repeated.count %> categories.
+					<%= user.products.count %> products for sale in <%= user.category_no_repeated.count %> categories.
 				</span>
 				<br />
 				<div class="actions-index">
-					<%= link_to "Products", seller_products_path(user), class: "btn-actions" %>
+					<%= link_to "Visit shop", seller_products_path(user), class: "btn-actions" %>
 				</div>
 			</div>
 		</div>

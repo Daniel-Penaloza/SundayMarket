@@ -29,6 +29,50 @@
   }
 }
 
+.user-info-index .seller-actions {
+  margin-left: -10%;
+}
+
+.user-info-index i {
+  float: left;
+  margin-left: 187px;
+}
+
+.user-info-index .fa-pencil {
+  background:rgba(255,255,255,0.5);
+  text-decoration: none;
+  color: #4CD762;
+  font-weight: bold;
+  border-radius: 50%;
+  padding: 10px 11px;
+  position: absolute;
+  margin-left: 50px;
+  margin-top: 5px;
+  transition: color 1s, background-color 1s;
+  &:hover {
+    color: rgba(255,255,255,0.5);
+    background-color: #4CD762;
+    transition: color 1s, background-color 1s;
+  }
+}
+
+.user-info-index .fa-ban {
+  background:rgba(255,255,255,0.5);
+  text-decoration: none;
+  color: #eb0708;
+  font-weight: bold;
+  border-radius: 50%;
+  padding: 10px 11px; 
+  position: absolute;
+  margin-top: 5px;
+  transition: color 1s, background-color 1s;
+  &:hover {
+    color:rgba(255,255,255,0.5);
+    background-color: #eb0708;
+    transition: color 1s, background-color 1s;
+  }
+}
+
 .user-image-index { 
   width: 100%;
   border-bottom: 1px solid #ccc;
