@@ -11,23 +11,29 @@
 		<div class="row">
 			<div class="col span-3-of-3">
 				<h1>What Is Sunday Market!?</h1>
-				<span>
-					Sunday market is a place when you can...............Sunday market is a place when you can...............Sunday market is a place when you can...............Sunday market is a place when you can...............Sunday market is a place when you can...............Sunday market is a place when you can...............Sunday market is a place when you can...............Sunday market is a place when you can...............Sunday market is a place when you can...............Sunday market is a place when you can...............Sunday market is a place when you can...............Sunday market is a place when you can...............Sunday market is a place when you can...............Sunday market is a place when you can...............Sunday market is a place when you can...............Sunday market is a place when you can...............Sunday market is a place when you can...............Sunday market is a place when you can...............Sunday market is a place when you can...............Sunday market is a place when you can...............Sunday market is a place when you can...............Sunday market is a place when you can...............Sunday market is a place when you can...............Sunday market is a place when you can...............Sunday market is a place when you can...............Sunday market is a place when you can...............
-				</span>
+				<p>
+					The Sunday Market allows you to get a sneak peak at what is going to be available in your local market. Here you can view the list of fantastic <%= link_to "Shops", sellers_path %>, browse their latest <%= link_to "Products", products_path %>, or see what <%= link_to "Categories", categories_path %> are available at your local market.
+				</p>
+
+				<p>
+					Will you be selling at the market? <%= link_to "Sign up", new_user_registration_path %> now to show off your products ahead of the big day. 
+				</p>
 			</div>
 		</div>
 	</div>
 </section>
 
+
 <section class="section-market-images">
-	<h1>Available Categories</h1>
+	<%= link_to "View All Categories", categories_path, class: "btn-categories" %>
 	<div class="row">
-		<% @categories.each do |category| %>
-			<div class="col span-1-of-3">
-				<span class="category-text-image"><%= category.name %></span>
-				<%= link_to image_tag(category.cat_image, size: "350x300"), category_path(category) %>
-			</div>
-		<% end %>
+		<ul>
+			<% @categories.each do |category| %>
+				<div class="categories-homepage">
+					<li><%= link_to image_tag(category.cat_image, size: "185x185"), category_path(category) %></li>
+				</div>
+			<% end %>
+		</ul>
 	</div>
 </section>
 
@@ -66,26 +72,26 @@
 	<div class="row">
 		<div class="col span-1-of-3">
 			<blockquote>
-				 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum atque facere, numquam, a nam ratione id nemo quos distinctio dicta animi amet perspiciatis aspernatur doloribus optio. Cupiditate quas maxime, mollitia.
+				 I listed my shop last year for the Sunday Market held in London and had many customers say they only came because they saw pictures of my amazing Cakes.
 			</blockquote>
 			<cite>
-				<%= image_tag("profile_picture.jpg")%>(User	Name)
+				<%= image_tag("profile_picture.jpg")%>(Sally Johnson).
 			</cite>
 		</div>
 		<div class="col span-1-of-3">
 			<blockquote>
-				 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum atque facere, numquam, a nam ratione id nemo quos distinctio dicta animi amet perspiciatis aspernatur doloribus optio. Cupiditate quas maxime, mollitia.
+				 It’s great to see the range of products that are available at the market. I was looking for new ink for my printer and was able to ask the seller if it would fit my printer!.
 			</blockquote>
 			<cite>
-				<%= image_tag("profile_picture.jpg")%>(User	Name)
+				<%= image_tag("profile_picture.jpg")%>(Carl Smith).
 			</cite>
 		</div>
 		<div class="col span-1-of-3">
 			<blockquote>
-				 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum atque facere, numquam, a nam ratione id nemo quos distinctio dicta animi amet perspiciatis aspernatur doloribus optio. Cupiditate quas maxime, mollitia.
+				A customer found out about my site through Sunday Market! and I landed the biggest sale of the month! Everyone should be on here!.
 			</blockquote>
 			<cite>
-				<%= image_tag("profile_picture.jpg")%>(User	Name)
+				<%= image_tag("profile_picture.jpg")%>(Julie Jones).
 			</cite>
 		</div>
 	</div>

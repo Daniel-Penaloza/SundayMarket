@@ -1,9 +1,9 @@
 <nav>   
   <ul>         
     <li><%= link_to "Sunday Market!", root_path %></li>
-    <li><%= link_to "Sellers", sellers_path %></li>
-    <li><%= link_to "Products", products_path, id: "products_index_path" %></li>
-    <li><%= link_to "Categories", categories_path %></li>
+    <li><%= link_to "Shops", sellers_path %></li>
+    <li><%= link_to "All Products", products_path, id: "products_index_path" %></li>
+    <li><%= link_to "Browse Categories", categories_path %></li>
     <% if signed_in? %>
       <li class="user-actions">
         <%= link_to "#{current_user.full_name}<span class='caret'></span>".html_safe %> 
@@ -24,7 +24,7 @@
         </div>
       </li>
       <% else %>
-      <li class="login-actions"><%= link_to "Login", new_user_session_path %></li>
+      <li class="login-actions"><%= link_to "Login <em>(for shops only)</em>".html_safe, new_user_session_path %></li>
       <li class="login-actions"><%= link_to "Register", new_user_registration_path %></li>
     <% end %>
   </ul>

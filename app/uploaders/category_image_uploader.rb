@@ -15,7 +15,7 @@ class CategoryImageUploader < CarrierWave::Uploader::Base
   end
 
   def default_url
-   'category.jpg'
+   'category_image.jpg'
   end
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url(*args)

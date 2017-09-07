@@ -1,56 +1,71 @@
-<section class = "edit_seller_section">
-	<div class="row">
-		<div class="col span-2-of-3">
-			<h1>Edit <%= "#{@user.full_name}" %> </h1>
-			<%= form_for @user do |user| %>
-				<div class="user-form-container">
-					<div class="row">
-						<div class="col span-1-of-3">
-							<% if @user.image %>
-								<%= user.label :image, "Current Image", id: "label-image" %> <br/>
-								<%= image_tag(@user.image, size: "180x200", id: "image_edit_seller") %>
-							<% else %>
-								<%= image_tag("user_image.png", size: "100x100", id: "image_edit_seller")%>
-							<% end %>					
-							<div class="image-upload">
-								<label for="file-input">
-									<span class="btn-file">Select File</span>
-								</label>
-								<%= user.file_field :image, id: "file-input"%>
-							</div>
-						</div>
+<section class = "registration-section">
+	<h1>Edit User Profile</h1>
+  <div class="registration-form-container">
+    <%= form_for @user do |user| %>
+      <div class="row">
+        <%= image_tag(@user.image, size: "200x200", class: "show-image-user") %>
+        <br> <br>
+        <div class="image-upload">
+          <label for="file-input">
+            <span class="btn-select-user-image">Select A New File</span>
+          </label>
+          <%= user.file_field :image, id: "file-input" %>
+        </div>
+      </div>
+      <br><br>
+      <div class="row">
+        <div class="col span-1-of-3">
+          <div class="form-group">
+            <%= user.label :first_name, class: "input-label" %>
+            <%= user.text_field :first_name, class: "input-field"%>
+          </div>
 
-						<div class="col span-2-of-3">
-							<div class="form-group">
-								<%= user.label :first_name, "First Name", class: "input-label" %>
-								<%= user.text_field :first_name, class: "input-field" %>
-							</div>
-							
-							<div class="form-group">
-								<%= user.label :last_name, "Last Name", class: "input-label" %>
-								<%= user.text_field :last_name, class: "input-field" %>	
-							</div>
-							
-							<div class="form-group">
-								<%= user.label :email, "Email", class: "input-label" %>
-								<%= user.email_field :email, class: "input-field" %>	
-							</div>
-							
-							<div class="form-group">
-								<%= user.label :phone, "Phone", class: "input-label" %>
-								<%= user.phone_field :phone, class: "input-field" %>		
-							</div>
-						</div>
-					</div>
-					
-					<div class="row">
-						<div class="col span-3-of-3">
-							<%= user.submit "Update User", class: "btn-submit" %>
-						</div>
-					</div>
+          <div class="form-group">
+            <%= user.label :last_name, "Last Name", class: "input-label" %>
+            <%= user.text_field :last_name, class: "input-field" %> 
+          </div>
 
-				</div>
-			<% end %>
-		</div>
-	</div>
+          <div class="form-group">
+            <%= user.label :email, "Email", class: "input-label" %>
+            <%= user.text_field :email, class: "input-field" %>
+          </div>
+
+          <div class="form-group">
+            <%= user.label :password, class: "input-label" %> 
+              <em>(6 characters minimum)</em><br />
+              <%= user.password_field :password, autocomplete: "off", class: "input-field" %>
+          </div>
+
+          <div class="form-group">
+            <%= user.label :password_confirmation, class: "input-label" %>
+            <%= user.password_field :password_confirmation, autocomplete: "off", class: "input-field" %>
+          </div>
+        </div>
+
+        <div class="col span-2-of-3">
+          <div class="form-group">
+            <%= user.label :shop_name, "Shop Name", class: "input-label" %>
+            <%= user.text_field :shop_name, class: "input-field" %>
+          </div>
+
+          <div class="form-group">
+            <%= user.label :website, "Website",  class: "input-label" %>
+            <%= user.text_field :website, class: "input-field" %>
+          </div>
+
+          <div class="form-group">
+            <%= user.label :shop_description, "Description", class: "input-label" %>
+            <%= user.text_area :shop_description, class: "input-field", size: "20x4" %>
+          </div>
+
+          <div class="form-group">
+            <%= user.submit "Edit User", class: "btn-submit" %>
+          </div>          
+        </div>
+      </div>
+    <% end %> 
+  </div>
 </section>
+
+
+		
