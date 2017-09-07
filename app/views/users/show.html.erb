@@ -1,6 +1,9 @@
 <section class="show-user">
 	<div class="row">
 		<div class="col span-1-of-3">
+			<%if signed_in? %>
+				<i><%= link_to "", edit_user_path(@user), class: "fa fa-pencil" if @user.id == current_user.id || User.admin_types.include?(current_user.type)%></i>
+			<% end %>
 			<div class="image-container">
 				<%= image_tag(@user.image, size: "250x250", alt: "user_image" ) %>
 			</div>
@@ -8,27 +11,26 @@
 
 		<div class="col span-2-of-3">
 			<div class="user-information">
-				<span class="hi-box">Hi</span> 
-				<span class="im-user">I'm</span>
-				<span class="full-name-user"> <%= @user.full_name %></span> <br>
-				<span class="type-of-user"><%= @user.type %> User Of The Market!</span>
-				<% if signed_in? && (User.admin_types.include?(current_user.type) || current_user.id == @user.id) %>
-					<div class="user-actions-show">
-						<%= link_to "Edit User", edit_seller_path(@user), class: "btn-actions", id: "edit_#{@user.full_name}_seller"%>
-					</div>
-				<% end %>
+				<span class="full-name-shop"> <%= @user.shop_name %></span> 				
+					<span class="products-user">
+						<%= link_to '<i class="fa fa-shopping-cart"></i> Products'.html_safe, seller_products_path(@user) %>
+					</span><br>
 				<hr />
+				<span class="name-of-user">Seller Name: <%= @user.full_name %></span><br>
 				<span class="email-of-user">Email: <%= @user.email %></span><br>
-				<span class="phone-of-user">Phone: <%= @user.phone %></span><br>
 				<span class="products-of-user">Number of products to sell: <%= @user.products.count %></span><br>
-				<span class="categories-of-user">Active Categories: </span> 
+				<span class="categories-of-user">Browse by category: </span> 
 					<% @user.category_no_repeated.each do |category| %>
 						<span class="category-name">
 							<%=link_to category[1], category_path(category[0]) %>
 						</span>
 					<% end %>
-				<div class="products-user">
-					<%= link_to "Products to sell", seller_products_path(@user), class: "btn-actions" %>
+				<br>	
+				<span class="website-of-user">Website: <%= @user.website %></span>
+				<div>
+					<span class="shop-of-user">Shop description: </span>
+					<br>
+					<%= @user.shop_description %>	
 				</div>
 			</div>
 		</div>
