@@ -14,7 +14,7 @@
 							<li><%= description.name %></li>
 						</ul>
 					<% end %>
-					<span class="product-price"><%= product.price %></span>
+					<span class="product-price">Price: $<%= product.price %></span>
 					<br>
 					<span class="product-seller">Sold by: <%= link_to product.user.full_name,seller_path(product.user) %></span> <br><br>
 					<div class="product-actions">

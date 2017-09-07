@@ -1,6 +1,6 @@
 <section class="section-category-show">
   <h1><%= @category.name.titleize %></h1>
-  <h5>This category has <%= pluralize(@category.products.count, "product") %></h5>
+  <h5><%= pluralize(@category.products.count, "product") %> in this category.</h5>
   
   <% if @category.products.any? %>
     <% @category.products.each do |product| %>
