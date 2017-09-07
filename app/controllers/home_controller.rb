@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
 	def index
-		@categories = Category.all[0..17]
+		@categories = Category.limit(18)
 	end
 end

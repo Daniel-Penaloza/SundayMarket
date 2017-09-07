@@ -4,8 +4,8 @@
 			<div class="user-info-index">
 				<% if signed_in? %>
 					<div class="seller-actions">
-						<i><%= link_to "", edit_user_path(user), class: "fa fa-pencil" if user.id == current_user.id || User.admin_types.include?(current_user.type)%></i>
-						<i><%= link_to "", user_path(user), method: :delete, class: "fa fa-ban" if User.admin_types.include?(current_user.type) %></i>
+						<i><%= link_to "", edit_user_path(user), class: "fa fa-pencil" if current_user_object(user.id) || admin_type_user? %></i>
+						<i><%= link_to "", user_path(user), method: :delete, class: "fa fa-ban" if admin_type_user? %></i>
 					</div>
 				<% end %>
 				
