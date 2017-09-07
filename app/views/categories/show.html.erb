@@ -7,7 +7,7 @@
       <div class="row">
         <div class="col span-1-of-3">
           <div class="category-info-show">
-            <%= link_to image_tag(product.image), product_path(product), class: "product-show-view" %>
+            <%= link_to image_tag(product.image, size: "330x300"), product_path(product), class: "product-show-view" %>
             <br>
             <span class="product-name-category"><%= link_to product.name.titleize, product_path(product) %></span>
             <br>
