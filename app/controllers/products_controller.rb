@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-	before_action :set_product, only: [:show, :edit, :update]
+	before_action :set_product, only: [:show, :edit, :update, :destroy]
 	def index
 		@products = Product.paginate(:page => params[:page], :per_page => 6)
 	end
@@ -24,10 +24,12 @@ class ProductsController < ApplicationController
 	end
 
 	def edit
+		authorize @product
 		descriptions = @product.description
 	end
 
 	def update
+		authorize @product
 		if @product.update(product_params)
 			flash[:notice] = "The product was updated successfully"
 			redirect_to product_path(@product)
@@ -35,6 +37,13 @@ class ProductsController < ApplicationController
 			flash[:warning] = "There was a problem trying to update the product"
 			render :edit
 		end
+	end
+
+	def destroy
+		authorize @product
+		@product.destroy
+		flash[:warning] = "The product was deleted successfully"
+		redirect_to products_path
 	end
 
 	private
