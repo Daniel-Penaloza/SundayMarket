@@ -13,6 +13,7 @@
 					<li><%= description.name %></li>
 				<% end %>
 			</ul>
+			<p class="product-show-price">Price: $ <%= @product.price %></p>
 			<br>
 			<div class="product-sold-by">
 				Solb by: <%= link_to image_tag(@product.user.image, size: "40x40"), seller_path(@product.user) %>	

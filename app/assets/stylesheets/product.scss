@@ -66,6 +66,13 @@
 	color: #fff;
 }
 
+.product-show-price {
+	font-weight: bold;
+	margin-top: 5%;
+	margin-left: 2%;
+	font-size: 120%;
+}
+
 .show-product-information-user ul {
 	margin-left: 5%;
 	margin-top: 5%;
@@ -73,14 +80,9 @@
 }
 
 
-.show-product-information-user ul li {
-	margin-top: 1%;
-}
+.show-product-information-user ul li { margin-top: 1%; }
 
-.product-sold-by {
-	margin-top: 10%;
-	margin-left: 2%;
-}
+.product-sold-by { margin-left: 2%;	}
 
 .product-sold-by img {
 	border-radius: 20%;
