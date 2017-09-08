@@ -9,30 +9,45 @@ FactoryGirl.define do
 	#Note: (user has been trated as a seller)
 	
 	factory :user do
-		first_name				"seller"
-		last_name				"user"
 		email					{ generate :email }
+		first_name				"seller"
+		last_name				"usershop"
 		password			  	"asdfasdf"
 		password_confirmation 	"asdfasdf"
-		phone					"0123456789"
+		shop_name				"sellers' shop"
+		website					"www.shopseller.com"
+		shop_description		"Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+								 Numquam debitis ex, veniam quos, facilis voluptatem excepturi 
+								 reprehenderit id vitae veritatis omnis nostrum fuga eum harum, 
+								 totam aliquam libero error quasi."
 	end
 
 	factory :admin_user, class: "AdminUser" do
-		first_name				"admin"
-		last_name				"user"
 		email					{ generate :email }
+		first_name				"admin"
+		last_name				"usershop"
 		password 				"asdfasdf"
 		password_confirmation	"asdfasdf"
-		phone					"987654321"
+		shop_name				"admin's shop"
+		website					"www.shopadmin.com"
+		shop_description   		"Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+								 Numquam debitis ex, veniam quos, facilis voluptatem excepturi 
+								 reprehenderit id vitae veritatis omnis nostrum fuga eum harum, 
+								 totam aliquam libero error quasi."
 	end
 
 	factory :other_user, class: "User" do
-		first_name				"other"
-		last_name				"user"
 		email					{ generate :email }
+		first_name				"other"
+		last_name				"usershop"
 		password 				"asdfasdf"
 		password_confirmation   "asdfasdf"
-		phone					"1234567890"
+		shop_name				"other's shop"
+		website					"www.shopother.com"
+		shop_description        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+								 Numquam debitis ex, veniam quos, facilis voluptatem excepturi 
+								 reprehenderit id vitae veritatis omnis nostrum fuga eum harum, 
+								 totam aliquam libero error quasi."
 	end
 
 end
