@@ -27,7 +27,7 @@ class User < ApplicationRecord
 
   #-----------Avoiding The Repeated Elements In The User Categories------------#
   def category_no_repeated
-      self.categories.distinct.pluck(:id, :name)
+      self.categories.distinct.pluck(:id, :name, :color)
   end
 
   #-----------------------Adding A Default Image To The User -------------------#

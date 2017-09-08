@@ -17,6 +17,11 @@
                 <li><%= description.name %></li>
               </ul>
             <% end %>
+            
+            
+
+            
+            
             <span class="product-category-description"><%= product.price %></span>
             <br>
             <span class="product-seller">Sold by: <%= link_to product.user.full_name, seller_path(product.user) %></span>

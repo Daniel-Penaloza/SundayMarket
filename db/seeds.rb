@@ -26,7 +26,7 @@ puts "8 sellers have been created"
 
 
 10.times do |category|
-	Category.create(name: "number #{category} category")
+	Category.create(name: "number #{category} category", color: "#4CD762")
 end
 
 puts "10 categories are been created"

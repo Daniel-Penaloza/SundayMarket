@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170907014220) do
+ActiveRecord::Schema.define(version: 20170908094837) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20170907014220) do
     t.datetime "updated_at", null: false
     t.string "cat_image"
     t.string "slug"
+    t.string "color", default: "#4CD762"
     t.index ["slug"], name: "index_categories_on_slug", unique: true
   end
 
