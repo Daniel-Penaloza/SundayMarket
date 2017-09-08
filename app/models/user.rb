@@ -8,7 +8,7 @@ class User < ApplicationRecord
 
   #-----------------------Validations-------------------#
   validates_presence_of :first_name, :last_name, :shop_name
-  validates :first_name, :last_name, length: {minimum: 5, maximum: 12}
+  validates :first_name, :last_name, length: {minimum: 4, maximum: 12}
   validates :shop_name, length: {minimum: 5, maximum: 20}
   
   #----------------------- Uploader -----------------------#
