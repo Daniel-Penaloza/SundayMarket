@@ -83,3 +83,5 @@ gem 'bourbon', '~> 4.3', '>= 4.3.4'
 3.- We need to install bourbon just adding @import "bourbon"; in the application.scss file
 
 ***** Integration Of The Administrate Feature *****
+Checking all the test
+rspec -f d --color --dry-run name of file

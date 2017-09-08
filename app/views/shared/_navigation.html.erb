@@ -5,8 +5,8 @@
     <li><%= link_to "All Products", products_path, id: "products_index_path" %></li>
     <li><%= link_to "Browse Categories", categories_path %></li>
     <% if signed_in? %>
-      <li class="user-actions">
-        <%= link_to "#{current_user.full_name}<span class='caret'></span>".html_safe %> 
+      <li class="user-actions" >
+        <%= link_to "#{current_user.full_name}<span class='caret' id='user-actions'></span>".html_safe %> 
         <div>
           <ul>          
             <li><%= link_to "Products", seller_products_path(current_user) %></li>
@@ -19,13 +19,13 @@
               <li><%= link_to "New category", new_category_path %></li>
               <li><%= link_to "Admin Dashboard", admin_root_path %></li>
             <% end %>
-            <li class="separator"><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+            <li class="separator"><%= link_to "Logout", destroy_user_session_path, method: :delete, id: "logout_link" %></li>
           </ul>
         </div>
       </li>
       <% else %>
-      <li class="login-actions"><%= link_to "Login <em>(for shops only)</em>".html_safe, new_user_session_path %></li>
-      <li class="login-actions"><%= link_to "Register", new_user_registration_path %></li>
+      <li class="login-actions"><%= link_to "Login <em>(for shops only)</em>".html_safe, new_user_session_path, id: "login_link" %></li>
+      <li class="login-actions"><%= link_to "Register", new_user_registration_path, id: "register_link" %></li>
     <% end %>
   </ul>
 </nav>
