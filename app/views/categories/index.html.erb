@@ -6,7 +6,7 @@
         <div class="user-info-category">
           <%= image_tag(category.cat_image, size: "100x200", class: "category-image-index")%>
           <br>
-          <span class="full-name-category-index"><%= link_to category.name, category_path(category) %></span><br>
+          <span class="full-name-category-index"><%= link_to category.name, category_path(category), id: "category_#{category.id}_show" %></span><br>
           <span class="category-products"><%= pluralize(category.products.count, "product")%> in this category.</span><br><br>
           <% if signed_in? && admin_type_user? %>
             <%= link_to "Edit Category", edit_category_path(category), class: "btn-actions-category" %>

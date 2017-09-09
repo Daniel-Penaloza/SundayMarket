@@ -16,7 +16,7 @@
               <%= link_to "Edit Profile", edit_seller_path(current_user) if current_user.class.name == "User" %>
             </li>
             <% if User.admin_types.include?(current_user.try(:type)) %>
-              <li><%= link_to "New category", new_category_path %></li>
+              <li><%= link_to "New category", new_category_path, id: "category-new-link" %></li>
               <li><%= link_to "Admin Dashboard", admin_root_path %></li>
             <% end %>
             <li class="separator"><%= link_to "Logout", destroy_user_session_path, method: :delete, id: "logout_link" %></li>
