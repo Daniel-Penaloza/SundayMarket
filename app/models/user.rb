@@ -7,7 +7,9 @@ class User < ApplicationRecord
   has_many :categories, :through  => :products
 
   #-----------------------Validations-------------------#
-  validates_presence_of :first_name, :last_name
+  validates_presence_of :first_name, :last_name, :shop_name
+  validates :first_name, :last_name, length: {minimum: 4, maximum: 12}
+  validates :shop_name, length: {minimum: 5, maximum: 20}
   
   #----------------------- Uploader -----------------------#
   mount_uploader :image, UserImageUploader
@@ -29,12 +31,4 @@ class User < ApplicationRecord
   def category_no_repeated
       self.categories.distinct.pluck(:id, :name, :color)
   end
-
-  #-----------------------Adding A Default Image To The User ------------------#
-  before_create :asign_image
-
-  private
-    def asign_image
-      self.image = File.open(File.join(Rails.root,'app/assets/images/user_image.png'))
-    end
 end
