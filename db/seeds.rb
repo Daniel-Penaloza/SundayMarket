@@ -3,14 +3,14 @@
 
 # Creation of a seller
 @user = User.create!(first_name: "seller", last_name: "user", email: "selleruser@test.com", 
-					phone: "0123456789", password: "asdfasdf", password_confirmation: "asdfasdf",
-					image: @user_image)
+					password: "asdfasdf", password_confirmation: "asdfasdf",
+					image: @user_image, website: "teste.test")
 
 puts "1 seller user has been created"
 
 #Creation of a admin user
 @admin_user = AdminUser.create!(first_name: "admin", last_name: "user", email: "adminuser@test.com", 
-							   phone: "9876543210", password: "asdfasdf", password_confirmation: "asdfasdf",
+							   password: "asdfasdf", password_confirmation: "asdfasdf",
 							   image: @user_image)
 
 puts "1 admin user has been created"
@@ -19,7 +19,7 @@ puts "1 admin user has been created"
 8.times do |seller|
 	User.create!(first_name: "seller #{seller}", last_name: "user #{seller}", 
 				 email: "seller#{seller}user#{seller}@test.com", password: "asdfasdf", 
-				 password_confirmation: "asdfasdf", image: @user_image, phone: "(12#{seller} 456-789)")
+				 password_confirmation: "asdfasdf", image: @user_image)
 end
 
 puts "8 sellers have been created"
@@ -32,7 +32,7 @@ end
 puts "10 categories are been created"
 
 
-@product_image = File.open(File.join(Rails.root,'app/assets/images/product.jpg'))
+@product_image = File.open(File.join(Rails.root,'app/assets/images/product_image.jpg'))
 
 Product.create!(name: "Game of thrones", price: 25.75, summary: "A nice show", 
 				description: ["War", "Blood", "Politics","War", "Blood", "Politics"], 
