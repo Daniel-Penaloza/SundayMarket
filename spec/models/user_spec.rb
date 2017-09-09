@@ -46,5 +46,9 @@ RSpec.describe User, type: :model do
 			
 			expect(user_image.image) != nil
 		end
+
+		it 'is created with ban being false' do
+			expect(@user.ban).to eql(false)
+		end
 	end
 end
