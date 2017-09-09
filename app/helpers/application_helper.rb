@@ -7,7 +7,7 @@ module ApplicationHelper
 		User.admin_types.include?(current_user.try(:type))
 	end
 
-	#---------------Checks the url given by the user for the site----------------#
+	#---------------Checks  and format the url given by the user for the site---------------#
   def check_url(url)
     return true if /^(?:(?:https\:\/\/))|(?:(?:http\:\/\/))/.match(url)
     return false
