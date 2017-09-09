@@ -37,5 +37,13 @@ RSpec.describe User, type: :model do
 			@user.shop_name 	= 		"a" * 21
 			expect(@user).to_not be_valid
 		end
-	end	
+
+		it "user is created with a default image" do
+			user_image = User.create!(first_name: "seller", last_name: "user",
+										shop_name:"testingtest", email: "userseller@test.com",
+									  password: "asdfasdf", password_confirmation: "asdfasdf")
+			
+			expect(user_image.image) != nil
+		end
+	end
 end

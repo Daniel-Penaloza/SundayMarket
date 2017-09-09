@@ -2,7 +2,7 @@
 	<div class="row">
 		<div class="col span-1-of-3">
 			<%if signed_in? %>
-				<i><%= link_to "", edit_user_path(@user), class: "fa fa-pencil" if @user.id == current_user.id || User.admin_types.include?(current_user.type)%></i>
+				<i><%= link_to "", edit_seller_path(@user), class: "fa fa-pencil" if @user.id == current_user.id || User.admin_types.include?(current_user.type)%></i>
 			<% end %>
 			<div class="image-container">
 				<%= image_tag(@user.image, size: "250x250", alt: "user_image" ) %>
@@ -26,8 +26,10 @@
 							
 						</span>
 					<% end %>
-				<br>	
-				<span class="website-of-user">Website: <%= @user.website %></span>
+				<br>
+				<% if @user.website? %>	
+					<span class="website-of-user">Website: <%= link_to @user.website, format_url(@user.website) %></span>
+				<% end %>
 				<div>
 					<span class="shop-of-user">Shop description: </span>
 					<br>
