@@ -9,7 +9,7 @@ describe 'Behavior' do
 			user3 = FactoryGirl.create(:admin_user)
 
 			visit root_path
-			click_on("Sellers")
+			click_on("shops_link")
 			expect(current_path).to eq(sellers_path)
 
 			#If everything is ok then we need to have a list of users
@@ -24,14 +24,27 @@ describe 'Behavior' do
 	end
 
 	describe "show page" do
-		it 'user have displayed properly the full name' do
+		it 'display full name' do
 			@user = FactoryGirl.create(:user)
+			login_as(@user, :scope => :user)
 			visit seller_path(@user)
 			expect(page.status_code).to eq(200)
-
 			#In the show view of the seller we need to have at least this
-			expect(page).to have_content("Hi I'm #{@user.full_name}")
-			expect(page).to have_content("0123456789")	
+			expect(page).to have_content("#{@user.shop_name}")
+		end
+
+		it 'should not show website row if !user.website' do
+			@user = FactoryGirl.create(:user)
+			@user.website = nil
+			@user.save
+			visit seller_path(@user)
+			expect(page).not_to have_content("Website:")
+		end
+
+		it 'should show website atribute if user.website' do
+			@user = FactoryGirl.create(:user)
+			visit seller_path(@user)
+			expect(page).to have_content("#{@user.website}")
 		end
 	end
 
@@ -43,20 +56,21 @@ describe 'Behavior' do
 		end
 
 		it 'user can reach the edit view' do
-			click_on("edit_#{@user.full_name}_seller")
+			click_on("Edit Profile")
 			expect(current_path).to eq(edit_seller_path(@user))
 			expect(page.status_code).to eq(200)
 
-			expect(page).to have_content("Edit #{@user.full_name}")
+			expect(page).to have_content("Edit User Profile")
 			
 			fill_in "user[first_name]", with: "another"
 			fill_in "user[last_name]", with: "profile"
 			fill_in "user[email]", with: "anotherprofile@test.com"
-			fill_in "user[phone]", with: "1098765432"
-			click_on("Update User")
-			expect(current_path).to eq(seller_path(@user))
+			fill_in "user[password]", with: "asdfasdf"
+			fill_in "user[password_confirmation]", with: "asdfasdf"
+			
+			click_on("Edit User")
 
-			#Reloads the attributes of the current object from the database
+			expect(current_path).to eq(seller_path(@user))
 			@user.reload
 			expect(@user.full_name).to eq("Another Profile")
 			expect(@user.email).to eq("anotherprofile@test.com")

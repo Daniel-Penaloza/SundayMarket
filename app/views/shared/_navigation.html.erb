@@ -1,7 +1,7 @@
 <nav>   
   <ul>         
     <li><%= link_to "Sunday Market!", root_path %></li>
-    <li><%= link_to "Shops", sellers_path %></li>
+    <li><%= link_to "Shops", sellers_path , id: "shops_link" %></li>
     <li><%= link_to "All Products", products_path, id: "products_index_path" %></li>
     <li><%= link_to "Browse Categories", categories_path %></li>
     <% if signed_in? %>

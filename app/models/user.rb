@@ -30,7 +30,7 @@ class User < ApplicationRecord
       self.categories.distinct.pluck(:id, :name, :color)
   end
 
-  #-----------------------Adding A Default Image To The User -------------------#
+  #-----------------------Adding A Default Image To The User ------------------#
   before_create :asign_image
 
   private

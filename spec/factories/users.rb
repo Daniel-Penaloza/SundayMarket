@@ -14,6 +14,12 @@ FactoryGirl.define do
 		email					{ generate :email }
 		password			  	"asdfasdf"
 		password_confirmation 	"asdfasdf"
+		shop_name               "sellers' shop"
+		website                 "www.shopseller.com"
+		shop_description        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+ 														 Numquam debitis ex, veniam quos, facilis voluptatem excepturi 
+														 reprehenderit id vitae veritatis omnis nostrum fuga eum harum, 
+														 totam aliquam libero error quasi."
 	end
 
 	factory :admin_user, class: "AdminUser" do
