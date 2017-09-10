@@ -54,7 +54,7 @@
 						<h4>This Category Has Not Yey Image!</h4>
 					<% end %>
 					
-					<%= category.submit @category.new_record? ? "Create A Category" : "Update The Category", class: "btn-submit" %>	
+					<%= category.submit @category.new_record? ? "Create A Category" : "Update The Category", class: "btn-submit", id: "btn-new-category" %>	
 				</div>
 			<% end %>
 		</div>

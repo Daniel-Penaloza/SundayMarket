@@ -6,7 +6,6 @@ RSpec.describe User, type: :model do
 			@user = FactoryGirl.create(:user)
 		end
 		
-
 		it 'is a valid user' do
 			expect(@user).to be_valid
 		end
@@ -22,14 +21,14 @@ RSpec.describe User, type: :model do
 		it 'user first_name, last_name, shop_name have at least 4 characters' do
 			@user.first_name  = 	    "a" * 3
 			@user.last_name   =   		"b" * 3
-			@user.shop_name   = 		"c" * 3
+			@user.shop_name   = 			"c" * 3
 
 			expect(@user).to_not be_valid
 		end
 
 		it 'user first_name, last_name has 12 characters maximum' do
 			@user.first_name 	= 		"a" * 13
-			@user.last_name		=		"a" * 13
+			@user.last_name		=			"a" * 13
 
 			expect(@user).to_not be_valid
 		end

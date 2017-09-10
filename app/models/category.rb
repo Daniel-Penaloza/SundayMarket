@@ -8,6 +8,7 @@ class Category < ApplicationRecord
    	COLOR_REGEX = /\A#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})\z/
 
     validates_presence_of :name
+    validates :name, length: {minimum: 4, maximum: 15}
 		validates_format_of :color, with: COLOR_REGEX
 		validates :color, presence: true
 		
