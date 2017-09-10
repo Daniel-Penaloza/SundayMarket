@@ -6,7 +6,7 @@
         <%= content_tag :div,class: "user-info-category", style: "background-color:#{category.color}" do -%>
           <% if signed_in? && admin_type_user? %>
             <%= link_to "", edit_category_path(category), class: "fa fa-pencil", id: "edit_#{category.id}_category" %>
-            <%= link_to "", category_path(category), method: :delete, data: { confirm: "Are You Sure?"}, class: "fa fa-ban", id: "delete_#{category.id}_category" %>
+            <%= link_to "", category_path(category), method: :delete, data: { confirm: "Are You Sure?"}, class: "fa fa-trash", id: "delete_#{category.id}_category" %>
           <% end %>
 
           <%= image_tag(category.cat_image, size: "100x200", class: "category-image-index")%>

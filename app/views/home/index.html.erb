@@ -10,9 +10,9 @@
 	<div class="container">
 		<div class="row">
 			<div class="col span-3-of-3">
-				<h1>What Is Sunday Market!?</h1>
+				<h1>What is the Sunday Market!?</h1>
 				<p>
-					The Sunday Market allows you to get a sneak peak at what is going to be available in your local market. Here you can view the list of fantastic <%= link_to "Shops", sellers_path %>, browse their latest <%= link_to "Products", products_path %>, or see what <%= link_to "Categories", categories_path %> are available at your local market.
+					The Sunday Market allows you to get a sneak peak at what is going to be available in your local market. Here you can view the list of fantastic <%= link_to "shops", sellers_path %>, browse their latest <%= link_to "products", products_path %>, or see what <%= link_to "categories", categories_path %> are available at your local market.
 				</p>
 
 				<p>
@@ -30,7 +30,7 @@
 		<ul>
 			<% @categories.each do |category| %>
 				<div class="categories-homepage">
-					<li><%= link_to image_tag(category.cat_image, size: "185x185"), category_path(category) %></li>
+					<li><%= link_to image_tag(category.cat_image, size: "185x185", class: "home-cat-img-style"), category_path(category) %></li>
 				</div>
 			<% end %>
 		</ul>
@@ -39,7 +39,7 @@
 
 
 <section class="section-what-i-need">
-	<h1>Just 3 Steps To Become A Seller</h1>
+	<h1>List your shop in three easy steps...</h1>
 	<div class="row">
 		<div class="col span-2-of-3">
 			<%= image_tag("computer_section.png")%>
@@ -48,12 +48,12 @@
 		<div class="col span-1-of-3">
 			<div class="works-step">
 				<div>1</div>
-				<p>Register in the app.</p>
+				<p>Register</p>
 			</div>
 
 			<div class="works-step">
 				<div>2</div>
-				<p>Create products to be showed in the market.</p>
+				<p>List your products on the site</p>
 			</div>
 
 			<div class="works-step">
@@ -66,13 +66,13 @@
 
 <section class="section-testimonies">
 	<div class="row">
-		<h1>SOME TESTIMONIES WHEB THE PEOPLE VISIT THE SUNDAY MARKET!</h1>
+		<h1>Testimonials</h1>
 	</div>
 
 	<div class="row">
 		<div class="col span-1-of-3">
 			<blockquote>
-				 I listed my shop last year for the Sunday Market held in London and had many customers say they only came because they saw pictures of my amazing Cakes.
+				 I listed my shop last year for the Sunday Market held in London and had many customers say they only came because they saw pictures of my amazing cakes.
 			</blockquote>
 			<cite>
 				<%= image_tag("profile_picture.jpg")%>(Sally Johnson).
@@ -80,7 +80,7 @@
 		</div>
 		<div class="col span-1-of-3">
 			<blockquote>
-				 It’s great to see the range of products that are available at the market. I was looking for new ink for my printer and was able to ask the seller if it would fit my printer!.
+				 It’s great to see the range of products that are available at the market. I was looking for new ink for my printer and was able to ask the seller if it would fit my printer!
 			</blockquote>
 			<cite>
 				<%= image_tag("profile_picture.jpg")%>(Carl Smith).
@@ -88,7 +88,7 @@
 		</div>
 		<div class="col span-1-of-3">
 			<blockquote>
-				A customer found out about my site through Sunday Market! and I landed the biggest sale of the month! Everyone should be on here!.
+				A customer found out about my site through Sunday Market and I landed the biggest sale of the month! Everyone should be on here!
 			</blockquote>
 			<cite>
 				<%= image_tag("profile_picture.jpg")%>(Julie Jones).
