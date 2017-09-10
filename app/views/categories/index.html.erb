@@ -3,16 +3,17 @@
   <% @categories.each do |category| %>
     <div class="row">
       <div class="col span-1-of-3">
-        <div class="user-info-category">
-          <%= image_tag(category.cat_image, size: "100x200", class: "category-image-index")%>
-          <br>
-          <span class="full-name-category-index"><%= link_to category.name, category_path(category), id: "category_#{category.id}_show" %></span><br>
-          <span class="category-products"><%= pluralize(category.products.count, "product")%> in this category.</span><br><br>
+        <%= content_tag :div,class: "user-info-category", style: "background-color:#{category.color}" do -%>
           <% if signed_in? && admin_type_user? %>
-            <%= link_to "Edit Category", edit_category_path(category), class: "btn-actions-category" %>
-            <%= link_to "Delete Category", category_path(category), method: :delete, data: { confirm: "Are You Sure?"}, class: "btn-actions-category" %>
+            <%= link_to "", edit_category_path(category), class: "fa fa-pencil", id: "edit_#{category.id}_category" %>
+            <%= link_to "", category_path(category), method: :delete, data: { confirm: "Are You Sure?"}, class: "fa fa-ban", id: "delete_#{category.id}_category" %>
           <% end %>
-        </div>
+
+          <%= image_tag(category.cat_image, size: "100x200", class: "category-image-index")%>
+          <br><br>
+          <span class="full-name-category-index"><%= link_to category.name.titleize, category_path(category), id: "category_#{category.id}_show" %></span><br>
+          <span class="category-products"><%= pluralize(category.products.count, "product")%> in this category.</span><br><br>
+        <% end -%>
       </div>
     </div>
   <% end %>
