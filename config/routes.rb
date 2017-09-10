@@ -13,7 +13,9 @@ Rails.application.routes.draw do
 
   # Naming routes for sellers
   get 'sellers', to: 'users#index', as: :sellers
-  get 'seller/:id', to:  'users#show', as: :seller
+  get 'seller/:id', to: 'users#show', as: :seller
+  get 'seller/:id/ban', to: 'users#ban_seller', as: :ban_seller
+  get 'seller/:id/unban', to: 'users#unban_seller', as: :unban_seller
   get 'seller/:id/edit', to: 'users#edit', as: :edit_seller
   get 'seller/:id/products', to: 'users#products', as: :seller_products
 

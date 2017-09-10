@@ -7,6 +7,14 @@ class UserPolicy < ApplicationPolicy
 		return true if user_or_admin
 	end
 
+	def ban_seller?
+		return true if admin?
+	end
+
+	def unban_seller?
+		return true if admin?
+	end
+
 	private
 		def user_or_admin
 			record.id == user.id || admin?

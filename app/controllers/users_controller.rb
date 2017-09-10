@@ -1,8 +1,13 @@
 class UsersController < ApplicationController
-	before_action :set_user, only: [:show, :edit, :update ]
+	before_action :set_user, only: [:show, :edit, :update, :ban_seller, :unban_seller]
 
 	def index
-		@users = User.all.paginate(:page => params[:page], :per_page => 6)
+		if current_user && (current_user.type == AdminUser)
+			@users = User.all.paginate(:page => params[:page], :per_page => 6)
+			byebug
+		else
+			@users = User.where(:ban == false).paginate(:page => params[:page], :per_page => 6)
+		end
 	end
 
 	def show
@@ -28,10 +33,34 @@ class UsersController < ApplicationController
 		@user_products = User.friendly.find(params[:id]).products.paginate(:page => params[:page], :per_page => 6)
 	end
 
+	def ban_seller
+		authorize @user
+		@user.ban = true
+		if @user.save
+      flash[:notice] = 'O usuário foi banido com sucesso'
+      redirect_to sellers_path
+    else
+      flash[:alert] = 'O usuário não pode ser banido'
+      redirect_to seller_path(@user)
+    end
+	end
+
+	def unban_seller
+		authorize @user
+		@user.ban = false
+		if @user.save
+      flash[:notice] = 'O usuário foi desbanido com sucesso'
+      redirect_to sellers_path
+    else
+      flash[:alert] = 'O usuário não pode ser desbanido'
+      redirect_to seller_path(@user)
+    end
+	end
+
 	private
 		def user_params
 			params.require(:user).permit(:first_name, :last_name, :email, :image, :password, 
-										 :password_confirmation, :shop_name, :website, :shop_description )
+										 :password_confirmation, :shop_name, :website, :shop_description, :ban)
 		end
 
 		def set_user
