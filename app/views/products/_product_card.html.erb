@@ -1,0 +1,28 @@
+<% products.each do |product| %>
+  <div class="row">
+  			<div class="col span-1-of-3">
+  				<div class="product-info-index">
+  					<%= link_to image_tag(product.image, size: "300x300", style: "object-fit: contain;"), product_path(product), class: "product-show-view" %>
+  					<br>
+  					<span class="product-name-category"><%= link_to product.name.titleize, product_path(product) %></span>
+  					<br>
+  					<br>
+  					<hr class="hr-clear">
+  					<span class="product-summary"><%= truncate(product.summary, length: 100) %></span>
+            <hr class="hr-clear">
+            <span class="product-price">Price: $<%= product.price %></span>
+  					<br>
+  					<span class="product-seller">Sold by: <%= link_to product.user.full_name,seller_path(product.user) %></span> <br><br>
+  					<div class="product-actions">
+              			<% if signed_in? %>
+                				<% if admin_type_user? || current_user_object(product.user_id) %>
+                  				<%= link_to "", edit_product_path(product), class: "fa fa-pencil product-fa-pencil"  %> 
+                  				<%= link_to "", product_path(product), class: "fa fa-trash product-fa-ban", method: :delete,
+                    										data: { confirm: "Are you sure you want to delete this product?" }  %>
+                				<% end %>
+              			<% end %> 
+              		</div>
+  				</div>
+  			</div>
+	</div>
+<% end %>

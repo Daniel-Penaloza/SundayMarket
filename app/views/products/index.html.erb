@@ -1,35 +1,9 @@
 <section class="section-product-index">
 	<h1>List Of All Products </h1>
-	<% @products.each do |product| %>
-		<div class="row">
-			<div class="col span-1-of-3">
-				<div class="product-info-index">
-					<%= link_to image_tag(product.image, size: "330x300"), product_path(product), class: "product-show-view" %>
-					<br>
-					<span class="product-name-category"><%= link_to product.name.titleize, product_path(product) %></span>
-					<br>
-					<span class="product-summary"><%= product.summary %></span>
-					<% product.descriptions.each do |description| %>
-						<ul class="product-description">
-							<li><%= description.name %></li>
-						</ul>
-					<% end %>
-					<span class="product-price">Price: $<%= product.price %></span>
-					<br>
-					<span class="product-seller">Sold by: <%= link_to product.user.full_name,seller_path(product.user) %></span> <br><br>
-					<div class="product-actions">
-            			<% if signed_in? %>
-              				<% if admin_type_user? || current_user_object(product.user_id) %>
-                				<%= link_to "Edit Product", edit_product_path(product), class: "btn-submit"  %> 
-                				<%= link_to "Delete", product_path(product), class: "btn-submit", method: :delete,
-                  										data: { confirm: "Are you sure you want to delete this product?" }  %>
-              				<% end %>
-            			<% end %> 
-            		</div>
-				</div>
-			</div>
-		</div>
-	<% end %>
+	
+		<%= render partial: 'products/product_card', locals: { products: @products  } %>
 </section>
 
 <%= will_paginate @products %>
+
+  

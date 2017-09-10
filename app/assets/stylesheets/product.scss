@@ -9,6 +9,11 @@
 .section-product-index h1 {
 	text-align: center;
 }
+.product-fa{
+	font-size: 2em;
+   text-decoration: none;
+   margin: 0 20px;
+}
 
 .product-info-index {
   float: left;
@@ -34,6 +39,45 @@
 /* --------------------------------------------------------*/
 /* INDEX VIEW FOR PRODUCTS */
 /* --------------------------------------------------------*/ 
+.hr-clear {
+	clear: both;
+    border: 1px solid transparent;
+    height: 1px;
+}
+
+.product-fa-pencil {
+  background:rgba(255,255,255,0.5);
+  text-decoration: none;
+  font-size: 1.7em;
+  color: #4CD762;
+  font-weight: bold;
+  border-radius: 50%;
+  padding: 10px 11px;
+  margin: 5px 15px;
+  transition: color 1s, background-color 1s;
+  &:hover {
+    color: rgba(255,255,255,0.5);
+    background-color: #4CD762;
+    transition: color 1s, background-color 1s;
+  }
+}
+
+ .product-fa-ban {
+  background:rgba(255,255,255,0.5);
+  text-decoration: none;
+  font-size: 2em;
+  color: #eb0708;
+  font-weight: bold;
+  border-radius: 50%;
+  padding: 10px 11px; 
+  margin: 0px 15px;
+  transition: color 1s, background-color 1s;
+  &:hover {
+    color:rgba(255,255,255,0.5);
+    background-color: #eb0708;
+    transition: color 1s, background-color 1s;
+  }
+}
 
 /* --------------------------------------------------------*/
 /* SHOW VIEW FOR PRODUCTS */
@@ -51,7 +95,7 @@
 }
 
 .product-summary {
-	margin-top: -5%;
+	margin-top: -10%;
 	font-size: 80%;
 	opacity: 0.7;
 }
@@ -92,6 +136,9 @@
 /* --------------------------------------------------------*/
 /* SHOW VIEW FOR PRODUCTS */
 /* --------------------------------------------------------*/ 
+.product-show-view {
+	object-fit: none;
+}
 
 /* --------------------------------------------------------*/
 /* EDIT VIEW FOR PRODUCTS */
