@@ -3,9 +3,11 @@
 		<div class="col span-1-of-3">
 			<div class="user-info-index">
 				<% if signed_in? %>
-					<div class="seller-actions">
+					<div class="row seller-actions">
 						<i><%= link_to "", edit_user_path(user), class: "fa fa-pencil" if current_user_object(user.id) || admin_type_user? %></i>
-						<i><%= link_to "", user_path(user), method: :delete, class: "fa fa-ban" if admin_type_user? %></i>
+						<i><%= link_to "", user_path(user), method: :delete, class: "fa fa-trash-o" if admin_type_user? %></i>
+						<i><%= link_to "", ban_seller_path(user), id: "user_#{user.id}_ban", class: "fa fa-ban" if (admin_type_user?) && (!user.ban) %></i>
+						<i><%= link_to "", unban_seller_path(user), id: "user_#{user.id}_unban", class: "fa fa-check" if (admin_type_user?) && (user.ban) %></i>
 					</div>
 				<% end %>
 				
@@ -17,6 +19,11 @@
 				<span class="user-index-description">
 					<%= user.products.count %> products for sale in <%= user.category_no_repeated.count %> categories.
 				</span>
+				<% if admin_type_user? %>
+					<span class="user-banned-status">
+						<%= user.is_banned? %>
+					</span>
+				<% end %>
 				<br />
 				<div class="actions-index">
 					<%= link_to "Visit shop", seller_products_path(user), class: "btn-actions" %>

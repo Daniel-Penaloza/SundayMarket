@@ -45,5 +45,21 @@ RSpec.describe User, type: :model do
 			
 			expect(user_image.image) != nil
 		end
+
+		it 'is created with ban being false' do
+			expect(@user.ban).to eql(false)
+		end
+	end
+
+	describe 'is_banned?' do
+		it 'should say the user is banned' do
+			@user = FactoryGirl.build_stubbed(:user)
+			@user.ban = true
+			expect(@user.is_banned?).to eq("This user is banned")
+		end
+		it 'should say the user is not banned' do
+			@user = FactoryGirl.build_stubbed(:user)
+			expect(@user.is_banned?).to eq("This user isn't banned")
+		end
 	end
 end

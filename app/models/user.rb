@@ -31,4 +31,10 @@ class User < ApplicationRecord
   def category_no_repeated
       self.categories.distinct.pluck(:id, :name, :color)
   end
+
+  #-----------------------print if user is banned or not-----------------------#
+  def is_banned?
+    self.ban ? "This user is banned" : "This user isn't banned"  
+  end
+
 end

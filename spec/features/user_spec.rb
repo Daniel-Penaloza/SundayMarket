@@ -84,6 +84,7 @@ describe "edit page" do
 		@user = FactoryGirl.create(:user)
 		login_as(@user, :scope => :user) 
 	end
+	
 	it 'user can reach the edit view' do
 		visit root_path
 		click_on("Edit Profile")
