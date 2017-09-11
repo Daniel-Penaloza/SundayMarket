@@ -509,6 +509,44 @@
 .product-price {
   font-weight: 600;
 }
+
+
+.product-info-index .fa-pencil {
+  background:rgba(255,255,255,0.5);
+  text-decoration: none;
+  color: #4CD762;
+  font-weight: bold;
+  border-radius: 50%;
+  padding: 10px 11px;
+  position: absolute;
+  margin-left: 230px;
+  margin-top: 5px;
+  transition: color 1s, background-color 1s;
+  &:hover {
+    color: rgba(255,255,255,0.5);
+    background-color: #4CD762;
+    transition: color 1s, background-color 1s;
+  }
+
+}
+
+.product-info-index .fa-trash-o {
+  background:rgba(255,255,255,0.5);
+  text-decoration: none;
+  color: #eb0708;
+  font-weight: bold;
+  border-radius: 50%;
+  padding: 10px 11px; 
+  position: absolute;
+  margin-left: 280px;
+  margin-top: 5px;
+  transition: color 1s, background-color 1s;
+  &:hover {
+    color:rgba(255,255,255,0.5);
+    background-color: #eb0708;
+    transition: color 1s, background-color 1s;
+  }
+}
 /* --------------------------------------------------------*/
 /* USERS PRODUCT VIEW FOR USERS */
 /* --------------------------------------------------------*/  
