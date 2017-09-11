@@ -21,6 +21,8 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'database_cleaner'
   gem 'factory_girl_rails', '~> 4.8'
+  # Add matchers for pundit in Rspec
+  gem 'pundit-matchers'
   # Loads Environment Variables
   gem 'dotenv-rails', require: 'dotenv/rails-now'
 end

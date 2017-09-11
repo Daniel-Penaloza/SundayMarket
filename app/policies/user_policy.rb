@@ -1,4 +1,9 @@
 class UserPolicy < ApplicationPolicy
+
+	def show?
+		return true if not_banned? || user_or_admin
+	end
+
 	def edit?
 		return true if user_or_admin
 	end
@@ -17,11 +22,15 @@ class UserPolicy < ApplicationPolicy
 
 	private
 		def user_or_admin
-			record.id == user.id || admin?
+			record && (record.id == user.id || admin?)
 		end
 
 		def admin?
 			admin_types.include?(user.type)
+		end
+
+		def not_banned?
+			!user.ban
 		end
 
 		#def seller_approved
