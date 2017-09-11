@@ -6,7 +6,7 @@
     <li><%= link_to "Browse Categories", categories_path %></li>
     <% if signed_in? %>
       <li class="user-actions" >
-        <%= link_to "#{current_user.full_name}<span class='caret' id='user-actions'></span>".html_safe %> 
+        <%= link_to "#{current_user.full_name}<span class='caret' id='user-actions'></span>".html_safe, seller_path(current_user) %> 
         <div>
           <ul>          
             <li><%= link_to "My Products", seller_products_path(current_user) %></li>
