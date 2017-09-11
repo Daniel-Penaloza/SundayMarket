@@ -266,6 +266,17 @@
   font-weight: 500;
 }
 
+.website-of-user a {
+  text-decoration: none;
+  color: #2503e0;
+  font-weight: bold;
+  transition: color 0.5s;
+  &:hover {
+    color: black;
+    transition: color 0.5s;
+  }
+}
+
 .products-user {
   margin-top: 25px;
   background-color: #4CD762;
