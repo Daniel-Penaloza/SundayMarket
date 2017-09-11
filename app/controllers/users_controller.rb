@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-	before_action :set_user, only: [:show, :edit, :update, :destroy, :ban_seller, :unban_seller]
+	before_action :set_user, only: [:show, :edit, :update, :destroy, :products, :categories, :ban_seller, :unban_seller]
 
 	def index
 
@@ -36,8 +36,11 @@ class UsersController < ApplicationController
 	end
 	
 	def products
-		@user = User.friendly.find(params[:id])
 		@user_products = User.friendly.find(params[:id]).products.paginate(:page => params[:page], :per_page => 6)
+	end
+
+	def categories
+		@user_categories = User.friendly.find(params[:id]).categories.paginate(:page => params[:page], :per_page => 6)
 	end
 
 	def ban_seller

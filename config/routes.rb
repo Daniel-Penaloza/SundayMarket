@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get 'seller/:id/unban', to: 'users#unban_seller', as: :unban_seller
   get 'seller/:id/edit', to: 'users#edit', as: :edit_seller
   get 'seller/:id/products', to: 'users#products', as: :seller_products
+  get 'seller/:id/categories', to: 'users#categories', as: :seller_categories
 
 
   devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register'}
