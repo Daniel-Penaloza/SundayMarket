@@ -25,7 +25,6 @@ class ProductsController < ApplicationController
 
 	def edit
 		authorize @product
-		descriptions = @product.description
 	end
 
 	def update

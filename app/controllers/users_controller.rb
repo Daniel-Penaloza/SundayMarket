@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-	before_action :set_user, only: [:show, :edit, :update, :ban_seller, :unban_seller]
+	before_action :set_user, only: [:show, :edit, :update, :destroy, :products, :categories, :ban_seller, :unban_seller]
 
 	def index
 
@@ -11,7 +11,6 @@ class UsersController < ApplicationController
 	end
 
 	def show
-		authorize @user
 	end
 
 	def edit
@@ -29,9 +28,18 @@ class UsersController < ApplicationController
 		end
 	end
 
+	def destroy
+		@user.delete
+		flash[:danger] = "The user was deleted successfully"
+		redirect_to sellers_path
+	end
+	
 	def products
-		@user = User.friendly.find(params[:id])
 		@user_products = User.friendly.find(params[:id]).products.paginate(:page => params[:page], :per_page => 6)
+	end
+
+	def categories
+		@user_categories = User.friendly.find(params[:id]).categories.paginate(:page => params[:page], :per_page => 6)
 	end
 
 	def ban_seller
@@ -59,8 +67,7 @@ class UsersController < ApplicationController
 
 	private
 		def user_params
-			params.require(:user).permit(:first_name, :last_name, :email, :image, :password, 
-										 :password_confirmation, :shop_name, :website, :shop_description, :ban)
+			params.require(:user).permit(:first_name, :last_name, :email, :image, :shop_name, :website, :shop_description, :ban)
 		end
 
 		def set_user

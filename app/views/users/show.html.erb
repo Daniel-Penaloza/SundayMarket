@@ -30,7 +30,7 @@
 					<% end %>
 				<br>
 				<% if @user.website? %>	
-					<span class="website-of-user">Website: <%= link_to @user.website, format_url(@user.website) %></span>
+					<span class="website-of-user">Website: <%= link_to @user.website, format_url(@user.website),target: :_blank%></span>
 				<% end %>
 				<div>
 					<span class="shop-of-user">Shop description: </span>
