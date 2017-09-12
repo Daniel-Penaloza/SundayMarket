@@ -34,8 +34,46 @@
 }
 
 .product-info-index img {
-	height: 300px;
+	max-width:100%;
+	max-height:100%;
 }
+
+.product-info-index .fa-pencil {
+	background:rgba(255,255,230,0.5);
+  text-decoration: none;
+  color: #4CD762;
+  font-weight: bold;
+  border-radius: 50%;
+  padding: 10px 11px;
+  position: absolute;
+  margin-left: 280px;
+  margin-top: 5px;
+  transition: color 1s, background-color 1s;
+  &:hover {
+    color: rgba(255,255,255,0.5);
+    background-color: #4CD762;
+    transition: color 1s, background-color 1s;
+  }
+}
+
+.product-info-index .fa-trash-o{
+  background:rgba(255,255,230,0.5);
+  text-decoration: none;
+  color: #eb0708;
+  font-weight: bold;
+  border-radius: 50%;
+  padding: 10px 11px; 
+  position: absolute;
+  margin-left: 230px;
+  margin-top: 5px;
+  transition: color 1s, background-color 1s;
+  &:hover {
+    color:rgba(255,255,255,0.5);
+    background-color: #eb0708;
+    transition: color 1s, background-color 1s;
+  }
+}
+
 /* --------------------------------------------------------*/
 /* INDEX VIEW FOR PRODUCTS */
 /* --------------------------------------------------------*/ 
@@ -45,39 +83,6 @@
     height: 1px;
 }
 
-.product-fa-pencil {
-  background:rgba(255,255,255,0.5);
-  text-decoration: none;
-  font-size: 1.7em;
-  color: #4CD762;
-  font-weight: bold;
-  border-radius: 50%;
-  padding: 10px 11px;
-  margin: 5px 15px;
-  transition: color 1s, background-color 1s;
-  &:hover {
-    color: rgba(255,255,255,0.5);
-    background-color: #4CD762;
-    transition: color 1s, background-color 1s;
-  }
-}
-
- .product-fa-ban {
-  background:rgba(255,255,255,0.5);
-  text-decoration: none;
-  font-size: 2em;
-  color: #eb0708;
-  font-weight: bold;
-  border-radius: 50%;
-  padding: 10px 11px; 
-  margin: 0px 15px;
-  transition: color 1s, background-color 1s;
-  &:hover {
-    color:rgba(255,255,255,0.5);
-    background-color: #eb0708;
-    transition: color 1s, background-color 1s;
-  }
-}
 
 /* --------------------------------------------------------*/
 /* SHOW VIEW FOR PRODUCTS */
