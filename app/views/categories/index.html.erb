@@ -12,7 +12,14 @@
           <%= link_to image_tag(category.cat_image, size: "100x200", class: "category-image-index"), category_path(category) %>
           <br><br>
           <span class="full-name-category-index"><%= link_to category.name.titleize, category_path(category), id: "category_#{category.id}_show" %></span><br>
-          <span class="category-products"><%= pluralize(category.products.count, "product")%> in this category.</span><br><br>
+          <span class="category-products">
+            <% if current_user && (current_user.type == "AdminUser") %>
+              <%= pluralize(category.products.count, "product")%>
+            <% else %>
+              <%= pluralize(category.unbanned_user_products.count, "product")%>
+            <% end %> 
+            in this category.
+          </span><br><br>
         <% end -%>
       </div>
     </div>

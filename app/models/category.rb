@@ -20,7 +20,9 @@ class Category < ApplicationRecord
     extend FriendlyId
 		friendly_id :name, use: :slugged
 	
-	
+	def unbanned_user_products
+		self.products.joins(:user).where('users.ban =?', false)
+	end
 
 	
 	#private
