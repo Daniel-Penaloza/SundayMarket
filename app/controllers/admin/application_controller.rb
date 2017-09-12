@@ -28,5 +28,10 @@ module Admin
         show_search_bar: show_search_bar?
       }
     end
+  
+    def find_object(model_name)
+      model_name.friendly.find(params[:id])
+    end
   end
+
 end

@@ -25,7 +25,6 @@ class AdminUserDashboard < Administrate::BaseDashboard
     last_name: Field::String.with_options(searchable: true),
     type: Field::String.with_options(searchable: false),
     image: Field::Image.with_options(searchable: false),
-    phone: Field::String.with_options(searchable: false),
     created_at: Field::DateTime.with_options(searchable: false),
     updated_at: Field::DateTime.with_options(searchable: false),
   }.freeze
@@ -49,7 +48,6 @@ class AdminUserDashboard < Administrate::BaseDashboard
     :email,
     :first_name,
     :last_name,
-    :phone,
     :type,
     :image,
   ].freeze
@@ -61,8 +59,5 @@ class AdminUserDashboard < Administrate::BaseDashboard
     :email,
     :first_name,
     :last_name,
-    :phone,
-    :password,
-    :password_confirmation,
   ].freeze
 end
