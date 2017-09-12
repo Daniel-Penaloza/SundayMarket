@@ -1,16 +1,23 @@
 class ProductsController < ApplicationController
 	before_action :set_product, only: [:show, :edit, :update, :destroy]
+	
 	def index
-		@products = Product.paginate(:page => params[:page], :per_page => 6)
+		if current_user && (current_user.type == "AdminUser")
+			@products = Product.paginate(:page => params[:page], :per_page => 6)
+		else
+			@products = Product.joins(:user).where('users.ban =?', false).paginate(:page => params[:page], :per_page => 6)
+		end
 	end
 
 	def new
 		@product = Product.new
+		authorize @product
 	end
 
 	def create
 		@product = Product.new(product_params)
 		@product.user_id = current_user.id
+		authorize @product
 		if @product.save 
 			flash[:notice] = "The product was created successfully"
 			redirect_to product_path(@product)
@@ -21,6 +28,7 @@ class ProductsController < ApplicationController
 	end
 
 	def show
+		authorize @product
 	end
 
 	def edit
