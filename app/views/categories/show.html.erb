@@ -1,8 +1,8 @@
 <section class="section-category-show">
   <h1><%= @category.name.titleize %></h1>
-  <h5><%= pluralize(@category.products.count, "product") %> in this category.</h5>
-  <% if @category.products.any? %>
-    <% @category.products.each do |product| %>
+  <h5><%= pluralize(@products.count, "product") %> in this category.</h5>
+  <% if @products.any? %>
+    <% @products.each do |product| %>
       <div class="row">
         <div class="col span-1-of-3">
           <div class="product-info-index">
@@ -29,4 +29,7 @@
       <%= link_to "Back", :back, class: "btn-submit" %>
     </section>
   <% end %>
+</section>
+<section >
+  <%= will_paginate @products %>
 </section>

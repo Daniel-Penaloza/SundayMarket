@@ -6,6 +6,11 @@ class CategoriesController < ApplicationController
   end
 
   def show
+    if current_user && (current_user.type == "AdminUser")
+      @products = @category.products.paginate(:page => params[:page], :per_page => 6)
+    else
+      @products = @category.unbanned_user_products.paginate(:page => params[:page], :per_page => 6)
+    end
   end
 
   def new
