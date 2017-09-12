@@ -9,7 +9,7 @@
             <%= link_to "", category_path(category), method: :delete, data: { confirm: "Are You Sure?"}, class: "fa fa-ban", id: "delete_#{category.id}_category" %>
           <% end %>
 
-          <%= image_tag(category.cat_image, size: "100x200", class: "category-image-index")%>
+          <%= link_to image_tag(category.cat_image, size: "100x200", class: "category-image-index"), category_path(category) %>
           <br><br>
           <span class="full-name-category-index"><%= link_to category.name.titleize, category_path(category), id: "category_#{category.id}_show" %></span><br>
           <span class="category-products"><%= pluralize(category.products.count, "product")%> in this category.</span><br><br>
