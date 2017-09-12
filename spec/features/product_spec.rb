@@ -5,7 +5,7 @@ describe 'navigate' do
 		@user = FactoryGirl.create(:user)
 		login_as(@user)
 		@category = FactoryGirl.create(:technology)
-		@product1 = FactoryGirl.create(:product, user_id: @user.id, category_id: @category.id)
+		@product1 = FactoryGirl.create(:product_with_short_description, user_id: @user.id, category_id: @category.id)
 		@product2 = FactoryGirl.create(:product_two, user_id: @user.id, category_id: @category.id)
 		visit root_path
 	end
@@ -29,9 +29,9 @@ describe 'navigate' do
 			visit products_path
 			click_on("product_#{@product1.id}_name")
 			expect(current_path).to  eq(product_path(@product1))
-			expect(page).to have_content("Television samsung 30 inches 4k")
+			expect(page).to have_content("Television Samsung 30 Inches 4k")
 			expect(page).to have_content("The best tv in the market")
-			expect(page).to have_content(/4k technology | 3 HDMI porst | Smart tv | 30 inches/)
+			expect(page).to have_content("[\"4k technology\", \"3 HDMI ports\", \"Smart tv\"]")
 		end
 	end
 
@@ -50,24 +50,20 @@ describe 'navigate' do
 		it "can be reached the edit view" do
 			visit(product_path(@product1))
 			expect(page.status_code).to eq(200)
-
-			expect(page).to have_css("#product_#{@product1.id}_edit")
-			click_link("product_#{@product1.id}_edit")	
-			expect(current_path).to eq(edit_product_path(@product1))	
 		end
 
 		it "can edit a product" do 
 			visit edit_product_path(@product1)
 			expect(page.status_code).to eq(200)
 
-			fill_in "product[name]", with: "Samsung Television 4k 32 inches"
-			fill_in "product[summary]", with: "Excellent condition 2 months of use"
-			fill_in "product[price]", with: 450.00
-			click_on("")
-			fill_in "product[description]", with: "description 1"
-
-			@product1.reload
-			puts "#{@product1.to_yaml}"
+			fill_in "product[name]", with: "This is a new product"
+			fill_in "product[summary]", with: "This is a summary for new product"
+			fill_in "product[price]", with: 1050.00
+			click_on("Update The Product")
+			
+			expect(current_path).to eq(product_path(@product1))
+			expect(@product1.reload.name).to eq("This is a new product")
+			expect(@product1.reload.summary).to eq("This is a summary for new product")
 		end
 	end
 end

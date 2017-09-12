@@ -85,7 +85,6 @@ describe 'navigate show' do
 
 		expect(page).to have_content("Television Samsung 30 Inches 4k")
 		expect(page).to have_content("The best tv in the market")
-		expect(page).to have_content(/4k technology|3 HDMI porst|Smart tv/)
 
 		#Testing with instances variables and eq
 		expect(@product2.name).to eq("Iphone 7 Plus")

@@ -96,8 +96,6 @@ describe "edit page" do
 		fill_in "user[first_name]", with: "another"
 		fill_in "user[last_name]", with: "profile"
 		fill_in "user[email]", with: "anotherprofile@test.com"
-		fill_in "user[password]", with: "asdfasdf"
-		fill_in "user[password_confirmation]", with: "asdfasdf"
 		
 		click_on("Edit User")
 

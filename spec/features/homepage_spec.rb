@@ -12,7 +12,7 @@ describe 'navigate' do
 
 		it "can have content" do
 			expect(page).to have_content("Sunday Market!")
-			expect(page).to have_content("Sellers")
+			expect(page).to have_content("Shops")
 			expect(page).to have_content("Products")
 			expect(page).to have_content("Categories")
 		end
