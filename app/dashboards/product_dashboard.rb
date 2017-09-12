@@ -9,7 +9,6 @@ class ProductDashboard < Administrate::BaseDashboard
       prefix: "$",
       decimals: 2,
       ),
-    description: Field::String.with_options(searchable: true),
     image: Field::Image.with_options(searchable: false),
     summary: Field::Text.with_options(searchable: false),
     created_at: Field::DateTime.with_options(searchable: false),
@@ -28,7 +27,6 @@ class ProductDashboard < Administrate::BaseDashboard
     :id,
     :name,
     :price,
-    :description,
     :summary,
     :image,
   ].freeze
@@ -37,7 +35,6 @@ class ProductDashboard < Administrate::BaseDashboard
     :id,
     :name,
     :price,
-    :description,
     :summary,
   ].freeze
 end
