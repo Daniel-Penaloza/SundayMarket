@@ -26,26 +26,30 @@
 
 <section class="section-market-images">
 	<%= link_to "View All Categories", categories_path, class: "btn-categories" %>
-	<div class="row">
-		<ul>
+		<ul class="market-showcase clearfix">
 			<% @categories.each do |category| %>
 				<div class="categories-homepage">
-					<li><%= link_to image_tag(category.cat_image, size: "185x185", class: "home-cat-img-style"), category_path(category) %></li>
+					<li> 
+						<figure class="category-photo">
+							<%= link_to image_tag(category.cat_image, size: "210x210", class: "home-cat-img-style"), category_path(category)%>
+						</figure> 
+					</li>
 				</div>
 			<% end %>
 		</ul>
-	</div>
 </section>
 
 
 <section class="section-what-i-need">
-	<h1>List your shop in three easy steps...</h1>
 	<div class="row">
-		<div class="col span-2-of-3">
-			<%= image_tag("computer_section.png")%>
+		<h1>List your shop in three easy steps...</h1>
+	</div>
+	<div class="row">
+		<div class="col span-2-of-3 steps-box">
+			<%= image_tag("computer_section.png", class: "computer-screen")%>
 		</div>
 
-		<div class="col span-1-of-3">
+		<div class="col span-1-of-3 steps-box">
 			<div class="works-step">
 				<div>1</div>
 				<p>Register</p>
@@ -88,7 +92,7 @@
 		</div>
 		<div class="col span-1-of-3">
 			<blockquote>
-				A customer found out about my site through Sunday Market and I landed the biggest sale of the month! Everyone should be on here!
+				A customer found out about my site through Sunday Market and I landed the biggest sale of the month! Everyone should be on here!&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			</blockquote>
 			<cite>
 				<%= image_tag("profile_picture.jpg")%>(Julie Jones).

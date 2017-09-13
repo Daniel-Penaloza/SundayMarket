@@ -16,6 +16,5 @@ $(document).ready(function() {
 			scrollTop: $(".section-testimonies").offset().top
 		}, "slow");
 	});
-
 });
 

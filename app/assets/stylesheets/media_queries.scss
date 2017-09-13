@@ -1,0 +1,136 @@
+/***  Big Tables To 1200px: 1024 to 1200 pixels(widths smaller that the 1140px row) ***/
+
+@media only screen and (max-width: 1200px) { 
+	body { font-size: 90%; }
+
+	header {
+  background-size: cover;
+  background-position: center;
+  height: 71vh;
+  background-attachment: fixed;
+	}
+
+	nav > ul > li > div ul > li > a {
+	  color: #fff;
+	  display: block;
+	  padding: 6px 12px;
+	  text-decoration: none;
+	}
+	
+	nav > ul > li > div ul > li  {
+ 		margin-left: 2px;
+	}
+
+	.user-actions {
+  	float: right;
+  	margin-right: 110px;
+	}
+
+	.section-about-market {
+		width: 90%;
+		margin-left: 5%;
+	}
+	
+	.section-market-images .btn-categories {
+		font-size: 140%;
+		margin-top: 28%;
+  	margin-left: 37%;
+	}
+	
+	.section-what-i-need h1 { font-size:  200%; }
+	.section-what-i-need { 
+		width: 100%; 
+		padding: 0 5%;
+		margin-bottom: 5%;
+	}
+	
+	.section-what-i-need img { width: 90%; }
+	.works-step { margin-bottom: 5px; }
+	.works-step div { 
+		height: 40px;
+		width: 40px;
+		margin-right: 15px;
+		padding: 4px;
+		font-size: 120%; 
+	}
+
+	.section-testimonies { height: 70vh; }
+	.section-testimonies h1 { font-size: 400%; }
+	.section-testimonies blockquote { margin-top: -10%;}
+	.section-testimonies .row:last-child { width: 90%; }
+}
+
+/***  Big Tables To 1200px: 1024 to 1200 pixels(widths smaller that the 1140px row) ***/
+
+
+
+/***  Small Tablets To Big Tablets: 768 to 1023 pixels ***/
+ 
+@media only screen and (max-width: 1023px) {
+	body { font-size: 80%; }
+	nav ul li { margin-left: -4%;}
+	nav ul li:first-child { margin-left:  1%;}
+
+	.user-actions { margin-right: 9%; }
+	.user-actions div { width: 25%; }	
+	.category-photo img { height: 100px; } 
+	
+	.section-market-images .btn-categories {
+		padding: 8px 8px;
+		margin-top: 130px;
+		margin-left: 36%;
+	}
+	
+	.section-what-i-need img {
+		width: 70%;
+		margin-left: 15%;
+	}
+
+	.steps-box {
+		float: none;
+		margin-left: 25%;
+		width: 100%;
+	}
+
+	.works-step div {
+		padding: 5px 5px;
+		height: 35px;
+  	width: 35px;
+	}
+
+	.section-testimonies .col { 
+		width: 100%;
+	}
+
+	.section-testimonies h1 {
+		margin-top: -100px;
+		margin-bottom: 60px;
+	}
+
+	.section-testimonies blockquote {
+		font-weight: 600;
+	}
+
+	.section-testimonies cite {
+		margin-top: -10px;
+		margin-bottom: 50px;
+	}
+
+	.section-locations .col {
+		width: 40%;
+		margin-left: 30%;
+	}
+
+	.social-links {
+		width: 150%;
+		font-size: 130%;
+		padding-left: 15%;
+	}
+
+}
+
+/***  Small Tablets To Big Tablets: 768 to 1023 pixels ***/
+
+/* --------------------------------------------------------*/
+/* MEDIA QUERIES FOR THE HOME PAGE */
+/* --------------------------------------------------------*/
