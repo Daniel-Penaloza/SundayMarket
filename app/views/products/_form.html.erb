@@ -1,4 +1,5 @@
 <%= form_for @product do |product| %>
+	<%= render "shared/errors", object: @product %>
 	<div class="row">
 		<div class="col span-1-of-3 product-fields">
 			<div class="form-group">

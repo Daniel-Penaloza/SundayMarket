@@ -22,7 +22,6 @@ class ProductsController < ApplicationController
 			flash[:notice] = "The product was created successfully"
 			redirect_to product_path(@product)
 		else
-			flash[:warning] = "There was a problem trying to create the product"
 			render :new
 		end
 	end
@@ -41,7 +40,6 @@ class ProductsController < ApplicationController
 			flash[:notice] = "The product was updated successfully"
 			redirect_to product_path(@product)
 		else
-			flash[:warning] = "There was a problem trying to update the product"
 			render :edit
 		end
 	end

@@ -2,6 +2,7 @@
 	<h1>Edit User Profile</h1>
   <div class="registration-form-container">
     <%= form_for @user do |user| %>
+      <%= render "shared/errors", object: @user %>
       <div class="row">
         <%= image_tag(@user.image, size: "200x200", class: "show-image-user") %>
         <br> <br>
@@ -57,6 +58,3 @@
     <% end %> 
   </div>
 </section>
-
-
-		
