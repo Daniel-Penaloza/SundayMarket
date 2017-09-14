@@ -22,7 +22,7 @@
 				<span class="email-of-user">Email: <%= @user.email %></span><br>
 				<span class="products-of-user">Number of products to sell: <%= @user.products.count %></span><br>
 				<span class="categories-of-user">Browse by category: </span> 
-					<% if @user.category_no_repeated.any? %>
+					<% if @user.categories.any? %>
 						<% @user.category_no_repeated.each do |category| %>
 							<span class="category-name", style="background-color:<%= category.color %>;">
 								<%=link_to category.name, category_path(category) %>
