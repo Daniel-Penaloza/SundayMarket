@@ -18,7 +18,7 @@
 				<br />
 				<% if user.categories.any? %>
 				<span class="user-index-description">
-					<%= user.products.count %> products for sale in <%= user.category_no_repeated.count %> categories.
+					<%= user.products.count %> products for sale in <%= user.category_no_repeated %> categories.
 				</span>
 				<% end %>
 				<% if admin_type_user? %>
