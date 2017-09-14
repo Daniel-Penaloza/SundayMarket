@@ -24,7 +24,7 @@
 			 			<%= image_tag(product.image, size: "350x280", alt: "product_image" ) %>
 
 			 			<span class="product-name"><%= link_to product.name.titleize, product_path(product) %></span><br>
-						<span class="product-summary"><%= product.summary %></span><br>
+						<span class="product-summary"><%= truncate(product.summary, length: 100) %></span><br>
 						<% product.descriptions.each do |description| %>
 							<ul class="product-description">
 								<li><%= description.name %></li>
