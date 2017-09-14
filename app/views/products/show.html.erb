@@ -1,11 +1,11 @@
 <section class="section-product-show">
 	<div class="row">
 		<div class="col span-1-of-3">
-			<%= image_tag(@product.image, size: "350x350") %>
+			<%= image_tag(@product.image, size: "350x350", style: "object-fit:contain;") %>
 		</div>
 
 		<div class="col span-2-of-3 show-product-information-user">
-			<h1><%= @product.name.titleize %></h1><br>
+			<h2><%= @product.name.titleize %></h2><br>
 			<div class="product-summary"><%= @product.summary %></div>
 			<div class="product-description-user">Item Information</div>
 			<ul>
@@ -16,7 +16,7 @@
 			<p class="product-show-price">Price: $ <%= @product.price %></p>
 			<br>
 			<div class="product-sold-by">
-				Solb by: <%= link_to image_tag(@product.user.image, size: "40x40"), seller_path(@product.user) %>	
+				Sold by: <%= link_to image_tag(@product.user.image, size: "40x40"), seller_path(@product.user) %>	
 			</div>
 		</div>
 	</div>
