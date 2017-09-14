@@ -30,7 +30,7 @@ class User < ApplicationRecord
 
   #-----------Avoiding The Repeated Elements In The User Categories------------#
   def category_no_repeated
-      self.categories.select(:id, :name, :color).uniq
+      self.categories.select(:id, :name, :slug, :color).uniq
   end
 
   #-----------------------print if user is banned or not-----------------------#
