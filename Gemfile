@@ -75,3 +75,4 @@ gem 'listen', '>= 3.0.5', '< 3.2'
 
 # Jquery Nested Forms
 gem 'cocoon', '~> 1.2', '>= 1.2.10'
+ruby "2.3.1"
