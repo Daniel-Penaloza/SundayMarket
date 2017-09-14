@@ -18,4 +18,4 @@ Here’s the team:
 
 - Rafael Prallon: Engineer and Ruby developer. Knows of the concepts behind both DevOps and cloud computing. During college acted with extension, especially focused in education. Currently looking for projects to improve himself.
 
-- Oliver Dhillon: Bio pending.
+- Oliver Dhillon: Product Manager. Learning Ruby/Rails to get a better technical understanding of Product Development. Has enjoyed working on a project with an international team.
