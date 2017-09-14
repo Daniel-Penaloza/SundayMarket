@@ -1,0 +1,16 @@
+<% if object.errors.any? %>
+	<div class="container-errors">
+		<div class="title-errors">
+			<h2>
+				<%= pluralize(object.errors.count, "Error") %> Prohibited This <%= object.class %> From Being Saved:
+			</h2>
+		</div>
+		<div class="errors-list">
+			<ul>
+				<% object.errors.full_messages.each do |msg| %>
+					<li><%= msg %>.</li>
+				<% end %>
+			</ul>
+		</div>
+	</div>
+<% end %>

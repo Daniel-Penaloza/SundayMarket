@@ -23,7 +23,6 @@ class UsersController < ApplicationController
 			flash[:notice] = "The user #{@user.full_name} was updated successfully."
 			redirect_to seller_path(@user)
 		else
-			flash[:warning] = "There was a problem trying to update the user."
 			render :edit
 		end
 	end

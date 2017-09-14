@@ -11,6 +11,12 @@ class Product < ApplicationRecord
   	validates :name, presence:true, length: {minimum: 3, maximum: 240}
   	validates :price, numericality: { greater_than_or_equal_to: 10, less_than_or_equal_to: 5000 }
   	validates :summary, presence:true, length: {minimum: 4, maximum: 500}
+  	validate :description_numbers
+
+  	def description_numbers
+  		errors.add(:descriptions, "(need to have 3 descriptions for your product)") if descriptions.size != 3
+  	end
+
   	default_scope -> { order(updated_at: :desc) }
 
   	mount_uploader :image, ProductImageUploader
